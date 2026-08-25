@@ -35,9 +35,9 @@ body {
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.1; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; padding: 1px 24px 0; position: relative; }
 
-.section-title { font-size: clamp(2rem, 4vw, 3rem); margin: 16px 0 40px; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); margin: 56px 0 40px; }
 
 .card {
   border: 1px solid var(--border);
