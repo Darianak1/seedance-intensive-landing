@@ -140,6 +140,35 @@
     </div>
   </section>
 
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="meta meta--tl">Галерея</p>
+      <h2 class="section-title">Что можно снять за <span class="hero__title-accent">7 дней</span></h2>
+      <div class="gallery__grid">
+        <button class="gallery__item" data-video="assets/video/gallery-1.mp4">
+          <video muted loop playsinline poster="assets/img/gallery-1-poster.jpg">
+            <source src="assets/video/gallery-1.mp4" type="video/mp4">
+          </video>
+        </button>
+        <button class="gallery__item" data-video="assets/video/gallery-2.mp4">
+          <video muted loop playsinline poster="assets/img/gallery-2-poster.jpg">
+            <source src="assets/video/gallery-2.mp4" type="video/mp4">
+          </video>
+        </button>
+        <button class="gallery__item" data-video="assets/video/gallery-3.mp4">
+          <video muted loop playsinline poster="assets/img/gallery-3-poster.jpg">
+            <source src="assets/video/gallery-3.mp4" type="video/mp4">
+          </video>
+        </button>
+        <button class="gallery__item" data-video="assets/video/gallery-4.mp4">
+          <video muted loop playsinline poster="assets/img/gallery-4-poster.jpg">
+            <source src="assets/video/gallery-4.mp4" type="video/mp4">
+          </video>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- секции добавляются в задачах 3, 5-9 -->
 </main>
 
@@ -153,6 +182,11 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" aria-label="Закрыть">&times;</button>
+  <video class="lightbox__video" controls playsinline></video>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

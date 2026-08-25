@@ -18,10 +18,47 @@ function initAccordions(itemSelector, toggleSelector) {
   });
 }
 
+function initGallery() {
+  const items = document.querySelectorAll('.gallery__item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxVideo = lightbox.querySelector('.lightbox__video');
+  const closeBtn = lightbox.querySelector('.lightbox__close');
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      lightboxVideo.src = item.dataset.video;
+      lightbox.classList.add('is-open');
+      lightboxVideo.play();
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+    lightbox.classList.remove('is-open');
+  });
+}
+
+function initGalleryAutoplay() {
+  const videos = document.querySelectorAll('.gallery__item video');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+  videos.forEach((video) => observer.observe(video));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   document.querySelectorAll('.js-shader-canvas').forEach((canvas) => {
     initShaderBackground(canvas);
   });
   initAccordions('.program-day', '.program-day__toggle');
+  initGallery();
+  initGalleryAutoplay();
 });
