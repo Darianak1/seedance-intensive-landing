@@ -102,14 +102,6 @@ function initScrollAnimations() {
       scrollTrigger: { trigger: el, start: 'top 85%' },
     });
   });
-
-  ScrollTrigger.create({
-    trigger: '.hero',
-    start: 'top top',
-    end: '+=100%',
-    pin: '.hero__content',
-    pinSpacing: false,
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
