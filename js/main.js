@@ -9,4 +9,7 @@ function initHeaderScroll() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
+  document.querySelectorAll('.js-shader-canvas').forEach((canvas) => {
+    initShaderBackground(canvas);
+  });
 });
