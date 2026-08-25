@@ -226,3 +226,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .pricing__note { opacity: 0.8; margin-top: 8px; }
 .pricing__features { list-style: none; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; text-align: left; }
 .pricing__features li::before { content: "— "; color: var(--acid); }
+
+.testimonials { padding: 80px 0; }
+.testimonials__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.testimonial cite { display: block; margin-top: 16px; color: var(--acid); font-style: normal; }
+
+.faq { padding: 80px 0; }
+.faq__list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item__toggle {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+.faq-item__content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-item[data-open="true"] .faq-item__content { max-height: 200px; padding-top: 12px; }

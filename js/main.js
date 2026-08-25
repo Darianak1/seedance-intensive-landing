@@ -61,4 +61,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions('.program-day', '.program-day__toggle');
   initGallery();
   initGalleryAutoplay();
+  initAccordions('.faq-item', '.faq-item__toggle');
 });
