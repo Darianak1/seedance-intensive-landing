@@ -53,6 +53,23 @@ function initGalleryAutoplay() {
   videos.forEach((video) => observer.observe(video));
 }
 
+function initCountdown() {
+  const START_DATE = new Date('2026-09-17T10:00:00+03:00');
+  const countdownEl = document.getElementById('countdown');
+  if (!countdownEl) return;
+
+  function tick() {
+    const { days, hours, minutes, seconds } = getTimeRemaining(START_DATE);
+    countdownEl.querySelector('[data-unit="days"]').textContent = String(days).padStart(2, '0');
+    countdownEl.querySelector('[data-unit="hours"]').textContent = String(hours).padStart(2, '0');
+    countdownEl.querySelector('[data-unit="minutes"]').textContent = String(minutes).padStart(2, '0');
+    countdownEl.querySelector('[data-unit="seconds"]').textContent = String(seconds).padStart(2, '0');
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   document.querySelectorAll('.js-shader-canvas').forEach((canvas) => {
@@ -62,4 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initGalleryAutoplay();
   initAccordions('.faq-item', '.faq-item__toggle');
+  initCountdown();
 });
