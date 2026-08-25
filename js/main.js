@@ -28,7 +28,7 @@ function initGallery() {
     item.addEventListener('click', () => {
       lightboxVideo.src = item.dataset.video;
       lightbox.classList.add('is-open');
-      lightboxVideo.play();
+      lightboxVideo.play().catch(() => {});
     });
   });
 
@@ -44,7 +44,7 @@ function initGalleryAutoplay() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.play();
+        entry.target.play().catch(() => {});
       } else {
         entry.target.pause();
       }
