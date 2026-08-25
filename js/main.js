@@ -70,6 +70,48 @@ function initCountdown() {
   setInterval(tick, 1000);
 }
 
+function initScrollAnimations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('section').forEach((section) => {
+    const targets = section.querySelectorAll('.card, .section-title, .hero__title, .hero__subtitle, .hero__cta');
+    if (!targets.length) return;
+    gsap.from(targets, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+      },
+    });
+  });
+
+  document.querySelectorAll('[data-count-to]').forEach((el) => {
+    const target = Number(el.dataset.countTo);
+    gsap.to(el, {
+      textContent: target,
+      duration: 1.5,
+      snap: { textContent: 1 },
+      onUpdate: function () {
+        el.textContent = Math.floor(Number(el.textContent)).toLocaleString('ru-RU');
+      },
+      scrollTrigger: { trigger: el, start: 'top 85%' },
+    });
+  });
+
+  ScrollTrigger.create({
+    trigger: '.hero',
+    start: 'top top',
+    end: '+=100%',
+    pin: '.hero__content',
+    pinSpacing: false,
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   document.querySelectorAll('.js-shader-canvas').forEach((canvas) => {
@@ -80,4 +122,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryAutoplay();
   initAccordions('.faq-item', '.faq-item__toggle');
   initCountdown();
+  initScrollAnimations();
 });
