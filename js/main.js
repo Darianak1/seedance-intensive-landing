@@ -123,7 +123,7 @@ function initScrollAnimations() {
     });
   });
 
-  document.querySelectorAll('.trust__stat-circle path').forEach((path) => {
+  document.querySelectorAll('.trust__stat-circle path, .chalk-underline__svg path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
