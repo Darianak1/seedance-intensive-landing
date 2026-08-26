@@ -127,6 +127,15 @@ function initScrollAnimations() {
     delay: 0.9,
     scrollTrigger: { trigger: '.trust__note', start: 'top 90%' },
   });
+
+  gsap.from('.trust__stamp', {
+    opacity: 0,
+    scale: 2.4,
+    rotation: 25,
+    duration: 0.5,
+    ease: 'back.out(2.5)',
+    scrollTrigger: { trigger: '.trust__claim', start: 'top 75%' },
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -148,8 +148,38 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__subtitle { font-size: 1.25rem; max-width: 560px; margin-bottom: 32px; opacity: 0.9; }
 
 .trust__inner { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 60px 24px; }
-.trust__claim { width: 100%; max-width: 680px; }
-.trust__text { padding-top: 8px; }
+.trust__claim { position: relative; width: 100%; max-width: 680px; }
+.trust__text { padding-top: 8px; padding-right: 72px; }
+.trust__stamp {
+  position: absolute;
+  top: -22px;
+  right: -18px;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+.trust__stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.trust__stamp svg circle { fill: none; stroke: var(--acid); stroke-width: 3; }
+.trust__stamp-text {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: var(--acid);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .trust__stamp { top: -16px; right: -10px; width: 76px; height: 76px; }
+  .trust__stamp-text { font-size: 0.65rem; }
+  .trust__text { padding-right: 56px; }
+}
 .trust__stats { position: relative; display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; }
 .trust__stat { text-align: center; }
 .trust__stat-circle-wrap { position: relative; display: flex; align-items: center; justify-content: center; padding: 8px 20px; margin: 0 auto; }
