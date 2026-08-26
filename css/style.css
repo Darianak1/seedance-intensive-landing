@@ -273,13 +273,24 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   transition: opacity 0.3s ease;
 }
 .lightbox.is-open { opacity: 1; visibility: visible; }
-.lightbox__video { max-width: 90vw; max-height: 85vh; transform: scale(0.9); transition: transform 0.3s ease; }
-.lightbox.is-open .lightbox__video { transform: scale(1); }
+.lightbox__video, .lightbox__image { max-width: 90vw; max-height: 85vh; transform: scale(0.9); transition: transform 0.3s ease; }
+.lightbox__image { display: none; border-radius: 12px; }
+.lightbox.is-open .lightbox__video, .lightbox.is-open .lightbox__image { transform: scale(1); }
 .lightbox__close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
 
 .speaker { padding: 80px 0; }
 .speaker__inner { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; }
 .speaker__media { display: flex; flex-direction: column; gap: 10px; }
+.speaker__photo-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.speaker__photo-btn:hover { opacity: 0.85; }
 .speaker__photo { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
 .speaker__info p { margin-bottom: 16px; }
 .speaker__roles {

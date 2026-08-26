@@ -267,11 +267,19 @@
   <section class="speaker" id="speaker">
     <div class="container speaker__inner">
       <div class="speaker__media">
-        <img class="speaker__photo" src="assets/img/eradj-nidoev.jpg" alt="Эрадж Нидоев">
+        <button class="speaker__photo-btn" data-image="assets/img/eradj-nidoev.jpg" aria-label="Увеличить фото">
+          <img class="speaker__photo" src="assets/img/eradj-nidoev.jpg" alt="Эрадж Нидоев">
+        </button>
         <div class="speaker__gallery">
-          <img src="assets/img/speaker-2.jpg" alt="Эрадж Нидоев с наградой фильма «22:22»">
-          <img src="assets/img/speaker-3.jpg" alt="Эрадж Нидоев на премьере">
-          <img src="assets/img/speaker-4.jpg" alt="Эрадж Нидоев на съёмочной площадке">
+          <button class="speaker__photo-btn" data-image="assets/img/speaker-2.jpg" aria-label="Увеличить фото">
+            <img src="assets/img/speaker-2.jpg" alt="Эрадж Нидоев с наградой фильма «22:22»">
+          </button>
+          <button class="speaker__photo-btn" data-image="assets/img/speaker-3.jpg" aria-label="Увеличить фото">
+            <img src="assets/img/speaker-3.jpg" alt="Эрадж Нидоев на премьере">
+          </button>
+          <button class="speaker__photo-btn" data-image="assets/img/speaker-4.jpg" aria-label="Увеличить фото">
+            <img src="assets/img/speaker-4.jpg" alt="Эрадж Нидоев на съёмочной площадке">
+          </button>
         </div>
       </div>
       <div class="speaker__info card">
@@ -393,6 +401,7 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox__close" aria-label="Закрыть">&times;</button>
   <video class="lightbox__video" controls playsinline></video>
+  <img class="lightbox__image" alt="">
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

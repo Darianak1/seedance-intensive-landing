@@ -19,22 +19,37 @@ function initAccordions(itemSelector, toggleSelector) {
 }
 
 function initGallery() {
-  const items = document.querySelectorAll('.gallery__item');
   const lightbox = document.getElementById('lightbox');
   const lightboxVideo = lightbox.querySelector('.lightbox__video');
+  const lightboxImage = lightbox.querySelector('.lightbox__image');
   const closeBtn = lightbox.querySelector('.lightbox__close');
 
-  items.forEach((item) => {
+  document.querySelectorAll('.gallery__item').forEach((item) => {
     item.addEventListener('click', () => {
+      lightboxImage.style.display = 'none';
+      lightboxImage.src = '';
+      lightboxVideo.style.display = 'block';
       lightboxVideo.src = item.dataset.video;
       lightbox.classList.add('is-open');
       lightboxVideo.play().catch(() => {});
     });
   });
 
+  document.querySelectorAll('.speaker__photo-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      lightboxVideo.pause();
+      lightboxVideo.style.display = 'none';
+      lightboxVideo.src = '';
+      lightboxImage.style.display = 'block';
+      lightboxImage.src = btn.dataset.image;
+      lightbox.classList.add('is-open');
+    });
+  });
+
   closeBtn.addEventListener('click', () => {
     lightboxVideo.pause();
     lightboxVideo.src = '';
+    lightboxImage.src = '';
     lightbox.classList.remove('is-open');
   });
 }
