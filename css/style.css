@@ -147,10 +147,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__title-accent { color: var(--acid); }
 .hero__subtitle { font-size: 1.25rem; max-width: 560px; margin-bottom: 32px; opacity: 0.9; }
 
-.trust__inner { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; padding: 60px 24px; }
-.trust__claim { flex: 1 1 320px; }
+.trust__inner { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 60px 24px; }
+.trust__claim { width: 100%; max-width: 680px; }
 .trust__text { padding-top: 8px; }
-.trust__stats { position: relative; display: flex; gap: 32px; }
+.trust__stats { position: relative; display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; }
 .trust__stat { text-align: center; }
 .trust__stat-circle-wrap { position: relative; display: flex; align-items: center; justify-content: center; padding: 8px 20px; margin: 0 auto; }
 .trust__stat-circle { position: absolute; inset: -6px -14px; width: calc(100% + 28px); height: calc(100% + 12px); overflow: visible; pointer-events: none; }
