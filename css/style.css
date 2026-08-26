@@ -201,6 +201,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .trust__note { position: static; margin-top: 16px; text-align: center; transform: rotate(-2deg); }
 }
 
+.advantages { padding: 80px 0; }
+.advantages__list { display: flex; flex-direction: column; gap: 14px; }
+.advantages__item { display: flex; align-items: flex-start; gap: 20px; }
+.advantages__number { flex-shrink: 0; min-width: 40px; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--acid); }
+.advantages__text { line-height: 1.5; padding-top: 4px; }
+.advantages__text strong { color: var(--white); }
+
 .program { padding: 80px 0; }
 .program__timeline { display: flex; flex-direction: column; gap: 16px; }
 .program-day__toggle {
