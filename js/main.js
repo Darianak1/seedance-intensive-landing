@@ -70,7 +70,7 @@ function initGallery() {
 }
 
 function initGalleryAutoplay() {
-  const videos = document.querySelectorAll('.gallery__item video');
+  const videos = document.querySelectorAll('.gallery__item video, .final-cta__video');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
