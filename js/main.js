@@ -71,8 +71,13 @@ function initCountdown() {
 }
 
 function initScrollAnimations() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (typeof gsap === 'undefined') return;
+  const skipAnimations = window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof gsap === 'undefined';
+  if (skipAnimations) {
+    document.querySelectorAll('[data-count-to]').forEach((el) => {
+      el.textContent = Number(el.dataset.countTo).toLocaleString('ru-RU');
+    });
+    return;
+  }
   gsap.registerPlugin(ScrollTrigger);
 
   document.querySelectorAll('section').forEach((section) => {
@@ -101,6 +106,26 @@ function initScrollAnimations() {
       },
       scrollTrigger: { trigger: el, start: 'top 85%' },
     });
+  });
+
+  document.querySelectorAll('.trust__stat-circle path').forEach((path) => {
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      duration: 1.1,
+      ease: 'power1.inOut',
+      scrollTrigger: { trigger: path, start: 'top 85%' },
+    });
+  });
+
+  gsap.from('.trust__note', {
+    opacity: 0,
+    scale: 0.7,
+    duration: 0.5,
+    delay: 0.9,
+    scrollTrigger: { trigger: '.trust__note', start: 'top 90%' },
   });
 }
 

@@ -150,10 +150,26 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .trust__inner { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; padding: 60px 24px; }
 .trust__claim { flex: 1 1 320px; }
 .trust__text { padding-top: 8px; }
-.trust__stats { display: flex; gap: 32px; }
+.trust__stats { position: relative; display: flex; gap: 32px; }
 .trust__stat { text-align: center; }
-.trust__stat-value { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--acid); }
+.trust__stat-circle-wrap { position: relative; display: flex; align-items: center; justify-content: center; padding: 8px 20px; margin: 0 auto; }
+.trust__stat-circle { position: absolute; inset: -6px -14px; width: calc(100% + 28px); height: calc(100% + 12px); overflow: visible; pointer-events: none; }
+.trust__stat-circle path { fill: none; stroke: var(--acid); stroke-width: 3; }
+.trust__stat-value { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--acid); position: relative; }
 .trust__stat-label { font-size: 0.85rem; opacity: 0.7; }
+.trust__note {
+  position: absolute;
+  right: -12px;
+  bottom: -44px;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  transform: rotate(-4deg);
+}
+
+@media (max-width: 640px) {
+  .trust__note { position: static; margin-top: 16px; text-align: center; transform: rotate(-2deg); }
+}
 
 .program { padding: 80px 0; }
 .program__timeline { display: flex; flex-direction: column; gap: 16px; }
