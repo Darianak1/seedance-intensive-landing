@@ -69,6 +69,20 @@ function initGallery() {
   });
 }
 
+function initLazyPosters() {
+  const videos = document.querySelectorAll('video[data-poster]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        video.poster = video.dataset.poster;
+        observer.unobserve(video);
+      }
+    });
+  }, { rootMargin: '400px 0px' });
+  videos.forEach((video) => observer.observe(video));
+}
+
 function initGalleryAutoplay() {
   const videos = document.querySelectorAll('.gallery__item video, .final-cta__video');
   const observer = new IntersectionObserver((entries) => {
@@ -176,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions('.program-day', '.program-day__toggle');
   initGallery();
   initGalleryAutoplay();
+  initLazyPosters();
   initTestimonialsCarousel();
   initAccordions('.faq-item', '.faq-item__toggle');
   initCountdown();
