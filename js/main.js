@@ -18,6 +18,21 @@ function initAccordions(itemSelector, toggleSelector) {
   });
 }
 
+function initTestimonialsCarousel() {
+  const track = document.getElementById('testimonialsTrack');
+  if (!track) return;
+  const prevBtn = document.querySelector('.testimonials-carousel__btn--prev');
+  const nextBtn = document.querySelector('.testimonials-carousel__btn--next');
+  const scrollBySlide = (dir) => {
+    const slide = track.querySelector('.testimonials-carousel__slide');
+    if (!slide) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+    track.scrollBy({ left: dir * (slide.offsetWidth + gap), behavior: 'smooth' });
+  };
+  prevBtn.addEventListener('click', () => scrollBySlide(-1));
+  nextBtn.addEventListener('click', () => scrollBySlide(1));
+}
+
 function initGallery() {
   const lightbox = document.getElementById('lightbox');
   const lightboxVideo = lightbox.querySelector('.lightbox__video');
@@ -161,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions('.program-day', '.program-day__toggle');
   initGallery();
   initGalleryAutoplay();
+  initTestimonialsCarousel();
   initAccordions('.faq-item', '.faq-item__toggle');
   initCountdown();
   initScrollAnimations();

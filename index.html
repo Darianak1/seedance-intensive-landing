@@ -24,12 +24,11 @@
     <nav class="site-header__nav">
       <a href="#program">Программа</a>
       <a href="#gallery">Галерея</a>
-      <a href="#speaker">Спикер</a>
-      <a href="#pricing">Цены</a>
+      <a href="#speaker">Основатель школы</a>
       <a href="#testimonials">Отзывы</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#cta-placeholder" class="btn btn-cta">Записаться</a>
+    <a href="#cta-placeholder" class="btn btn-cta">Предзапись</a>
   </div>
 </header>
 
@@ -43,7 +42,7 @@
     <div class="container hero__content">
       <h1 class="hero__title"><span class="hero__title-accent">CreAIte × Okko</span><br>интенсив на реальном проекте</h1>
       <p class="hero__subtitle">Интенсив на реальном проекте для ОККО. От промпта до готового ролика — под руководством Эраджа Нидоева.</p>
-      <a href="#cta-placeholder" class="btn btn-cta hero__cta">Записаться на интенсив</a>
+      <a href="#cta-placeholder" class="btn btn-cta hero__cta">Предзапись на интенсив</a>
       <p class="meta meta--br">Скролль вниз ↓</p>
     </div>
   </section>
@@ -64,7 +63,7 @@
             <svg class="trust__stat-circle" viewBox="0 0 100 70" aria-hidden="true">
               <path d="M12,38 C8,15 40,4 65,8 C92,12 96,40 78,55 C58,72 20,68 10,48 C7,42 9,38 14,36" />
             </svg>
-            <span class="trust__stat-value" data-count-to="7">0</span>
+            <span class="trust__stat-value" data-count-to="10">0</span>
           </span>
           <span class="trust__stat-label">дней</span>
         </div>
@@ -98,7 +97,7 @@
       <div class="advantages__list">
         <div class="advantages__item card">
           <span class="advantages__number">01</span>
-          <p class="advantages__text"><span class="chalk-underline"><strong>7 дней</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — а не месяцы, как у большинства школ</p>
+          <p class="advantages__text"><span class="chalk-underline"><strong>10 дней</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — а не месяцы, как у большинства школ</p>
         </div>
         <div class="advantages__item card">
           <span class="advantages__number">02</span>
@@ -131,42 +130,134 @@
   <section class="program" id="program">
     <div class="container">
       <p class="meta meta--tl">Программа</p>
-      <h2 class="section-title">7 дней <span class="chalk-note">от идеи до готового ролика</span></h2>
+      <h2 class="section-title">10 дней <span class="chalk-note">от идеи до готового ролика</span></h2>
       <div class="program__timeline">
         <article class="program-day card" data-open="false">
           <button class="program-day__toggle" aria-expanded="false">
             <span class="program-day__number">День 1</span>
             <span class="program-day__label">Пайплайн и старт проекта</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Понимание пайплайна, возможностей нейросети, экономики проекта. Начало работы над проектом: распределение по командам, анализ сценария и брифа, подбор референсов.</p>
+            <p><strong>Цель дня:</strong> дать общее понимание процесса, возможностей Seedance, его ограничений и экономики (как не потратить всё сразу). А также запустить разработку финального проекта.</p>
+            <p>К концу занятия будет понимание этапов, которые нужно пройти, чтобы получить готовый ролик.</p>
+            <p class="program-day__part">Часть 1</p>
+            <ul class="program-day__list">
+              <li>Основные этапы работы над роликом в Seedance — разбираем весь пайплайн на примере ролика: сценарий — референсы — персонаж и локация — ключевые кадры — генерация — отбор — монтаж — доработка — монтаж и финализация</li>
+              <li>Почему генерация не начинается с промпта и почему сначала нужно понять, какую функцию выполняет каждый кадр</li>
+              <li>Какие части ролика можно сделать через Seedance, а какие могут потребовать Nano Banana, Kling или постобработки</li>
+            </ul>
+            <p class="program-day__part">Часть 2: знакомство с инструментом</p>
+            <ul class="program-day__list">
+              <li>Почему в продакшне последнее время мы чаще всего используем Seedance</li>
+              <li>Возможности Seedance: какие форматы работы есть (text-to-video, image-to-video, video-to-video), какие в них отличия и когда какой используем</li>
+              <li>Ограничения и ошибки: почему результат не всегда можно повторить, сложности с физикой и пластикой персонажа, консистентность, диалог и липсинг, пространство и перспектива — всё с примерами</li>
+              <li>Как не потратить все кредиты за один раз: тарифы, лимиты, качество и обкатывание промта, тестовые прогоны, приоритизация кадров, битрейт</li>
+            </ul>
           </div>
         </article>
         <article class="program-day card" data-open="false">
           <button class="program-day__toggle" aria-expanded="false">
             <span class="program-day__number">День 2</span>
-            <span class="program-day__label">Персонаж, мир и text-to-video</span>
+            <span class="program-day__label">Персонаж, мир и визуальный стиль</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Создание персонажа и мира, генерация персонажа в образе, локации, подходы к формату. Создание промпта для видео в формате text-to-video. Практика: создание кадров в формате text-to-video.</p>
+            <p><strong>Цель дня:</strong> научиться работать в фото-нейросетях, разработать визуальный мир ролика, создать персонажа, локации, стиль проекта и несколько ключевых фотокадров.</p>
+            <p class="program-day__part">Часть 1: теория — фото как основа проекта</p>
+            <ul class="program-day__list">
+              <li><strong>Персонаж</strong> — почему персонаж должен быть разработан до начала генерации видео, какие изображения героя нужно подготовить</li>
+              <li><strong>Мир и локация</strong> — какие кадры нужны, свет, цвет, глубина кадра</li>
+              <li><strong>Подходы к созданию героя и мира</strong> — с нуля, через референс, через комбинацию референсов, через текстовый референс</li>
+              <li><strong>Референсные изображения стиля</strong> — почему они нужны почти в каждом проекте и какие конкретно референсы нужны для проекта</li>
+              <li><strong>Работа с инструментами</strong> — Nano Banana и Midjourney: Midjourney как сложный инструмент для уникальной стилистики, Nano Banana как простой инструмент для множества задач</li>
+              <li><strong>Промпт и LLM</strong> — основы написания промта для фото, работа с LLM</li>
+              <li>Что лучше исправлять на уровне изображения, а не пытаться получить при генерации видео</li>
+            </ul>
+            <p class="program-day__part">Часть 2: практика</p>
+            <ul class="program-day__list">
+              <li>Создание карты персонажа</li>
+              <li>Создание карты локации</li>
+              <li>Создание референсных изображений с учётом цвета и света ролика</li>
+              <li>Создание нескольких ключевых фотокадров для будущей генерации видео</li>
+            </ul>
+            <p class="program-day__part">Итог дня</p>
+            <ul class="program-day__list">
+              <li>Есть разработка персонажа и локаций</li>
+              <li>Есть понимание визуального стиля проекта</li>
+              <li>Подготовлены несколько ключевых фотокадров</li>
+              <li>Есть понимание, что нужно доработать перед переходом к генерации видео</li>
+            </ul>
           </div>
         </article>
         <article class="program-day card" data-open="false">
           <button class="program-day__toggle" aria-expanded="false">
             <span class="program-day__number">День 3</span>
-            <span class="program-day__label">Photo-to-video и ключевые кадры</span>
+            <span class="program-day__label">Три формата работы Seedance 2.5</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Разбор ошибок и недостатков формата text-to-video. Формат photo-to-video и работа с ключевыми кадрами. Практика: создание видеокадров по ключевым кадрам.</p>
+            <p><strong>Цель дня:</strong> освоить все форматы работы в Seedance 2.5, понять преимущества и недостатки каждого из них и начать генерацию видеокадров для финального ролика.</p>
+            <p class="program-day__part">Часть 1: обзор форматов работы в Seedance</p>
+            <ul class="program-day__list">
+              <li>Text to video</li>
+              <li>Photo to video</li>
+              <li>Video to video — перетягивание, edit и motion control, замена фона</li>
+              <li>Преимущества и недостатки каждого из форматов, гибридные форматы</li>
+              <li>Каким форматом когда мы пользуемся</li>
+              <li>Гибридные форматы: когда выгоднее соединять несколько методов внутри одного кадра</li>
+            </ul>
+            <p class="program-day__part">Часть 2: практика</p>
+            <ul class="program-day__list">
+              <li>Создание видеокадров в формате text to video</li>
+              <li>Создание видеокадров по ключевым фотокадрам в формате photo to video</li>
+              <li>Тесты с video to video, edit, motion control и заменой фона</li>
+              <li>Сравнение результатов</li>
+            </ul>
+            <p class="program-day__part">Итог дня</p>
+            <ul class="program-day__list">
+              <li>Есть понимание различия между text to video, photo to video и video to video</li>
+              <li>Умение выбирать подходящий формат под задачу</li>
+              <li>Понимание, как использовать гибридные форматы</li>
+              <li>Есть первые видеокадры для финального ролика</li>
+            </ul>
           </div>
         </article>
         <article class="program-day card" data-open="false">
           <button class="program-day__toggle" aria-expanded="false">
             <span class="program-day__number">День 4</span>
-            <span class="program-day__label">Video-to-video и motion control</span>
+            <span class="program-day__label">Разбор видеокадров с Эраджем</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Формат video-to-video, редактура видео, motion control. Практика: генерация и отбор видеокадров.</p>
+            <p><strong>Формат дня:</strong> мастерская с Эраджем Нидоевым.</p>
+            <p><strong>Цель дня:</strong> разобрать первые генерации, выявить ошибки и доработать материал.</p>
+            <p class="program-day__part">Разбор материала</p>
+            <ul class="program-day__list">
+              <li>Просмотр видеокадров</li>
+              <li>Разбор ошибок и затыков: как их можно исправить</li>
+              <li>Какие кадры стоит исправлять, какие — генерировать заново или перепридумывать, а где может помочь монтаж</li>
+            </ul>
+            <p class="program-day__part">Практика</p>
+            <p>Исправление ошибок по советам преподавателя.</p>
+            <p class="program-day__part">Итог дня</p>
+            <ul class="program-day__list">
+              <li>Есть более качественные видеокадры</li>
+              <li>Есть понимание, как исправлять типичные ошибки генерации</li>
+              <li>Сформирован материал для первого чернового монтажа</li>
+            </ul>
           </div>
         </article>
         <article class="program-day card" data-open="false">
@@ -174,8 +265,29 @@
             <span class="program-day__number">День 5</span>
             <span class="program-day__label">Пост-продакшн и монтаж</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Пост-продакшн теория. Звук: музыка и озвучка. Монтаж и понимание темпо-ритма. Практика: монтаж видео, понимание, какие кадры не работают и как их заменить.</p>
+            <p><strong>Цель дня:</strong> дать понимание, как из отдельных генераций собрать цельный ролик и как звук помогает скрыть недочёты материала.</p>
+            <p class="program-day__part">Часть 1: постпродакшн ИИ-ролика</p>
+            <ul class="program-day__list">
+              <li>Организация материала: версии, отбор дублей</li>
+              <li>Зачем монтировать ещё до того, как готовы все кадры</li>
+              <li>Rough cut как инструмент диагностики: какие кадры действительно нужны, а какие можно убрать</li>
+              <li>Теоретическая база монтажа: программы, темпо-ритм, особенности монтажа конкретного произведения</li>
+            </ul>
+            <p class="program-day__part">Часть 2: музыка и звук</p>
+            <ul class="program-day__list">
+              <li>Написание промта трека в Suno</li>
+              <li>Базовый саунд-дизайн: где брать звуки</li>
+              <li>Озвучка и голос: генерация голоса в ElevenLabs</li>
+            </ul>
+            <p class="program-day__part">Часть 3: практика</p>
+            <p>Написание трека, генерация голоса, первый монтаж своего ролика и его анализ после получения рафката.</p>
+            <p class="program-day__part">Итог дня</p>
+            <p>Есть базовое понимание, как происходит пост-продакшн ИИ-ролика: монтаж, написание музыки, создание озвучки и шумов, а также первый черновой монтаж и чёткий список кадров, которые нужно доработать или догенерировать перед финальным просмотром.</p>
           </div>
         </article>
         <article class="program-day card" data-open="false">
@@ -183,17 +295,51 @@
             <span class="program-day__number">День 6</span>
             <span class="program-day__label">Обратная связь от Эраджа</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Финальная обратная связь от Эраджа, доработка роликов.</p>
+            <p><strong>Цель дня:</strong> получить режиссёрский разбор от Эраджа Нидоева, выявить критические проблемы роликов и доработать материал.</p>
+            <p class="program-day__part">Формат дня</p>
+            <p>День строится как мастерская — профессиональный просмотр рабочих версий: показ роликов, разбор проблем и ошибок, обратная связь от Эраджа вместе с пониманием, с помощью каких инструментов можно исправить ошибки.</p>
+            <p class="program-day__part">Итог дня</p>
+            <p>У всех есть почти готовая версия ролика, список правок и понимание, что необходимо завершить перед показом экспертам.</p>
           </div>
         </article>
         <article class="program-day card" data-open="false">
           <button class="program-day__toggle" aria-expanded="false">
             <span class="program-day__number">День 7</span>
-            <span class="program-day__label">Обратная связь от экспертов</span>
+            <span class="program-day__label">Показ и обратная связь от экспертов</span>
           </button>
+          <svg class="program-day__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="program-day__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="program-day__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
           <div class="program-day__content">
-            <p>Обратная связь от экспертов.</p>
+            <p><strong>Цель:</strong> показать финальные ролики экспертам, получить профессиональную обратную связь, определить моменты для самостоятельной доработки и упаковать результат как портфолио-кейс.</p>
+            <p class="program-day__part">Часть 1: финальная подготовка</p>
+            <ul class="program-day__list">
+              <li>Последняя проверка монтажа</li>
+              <li>Подготовка финальной версии ролика</li>
+            </ul>
+            <p class="program-day__part">Часть 2: показ экспертам</p>
+            <ul class="program-day__list">
+              <li>Представление проектов и показ экспертам</li>
+              <li>Получение обратной связи по всем аспектам</li>
+            </ul>
+            <p class="program-day__part">Часть 3: завершение программы</p>
+            <ul class="program-day__list">
+              <li>Рефлексия-итог: что нужно ещё доработать, что получилось хорошо</li>
+              <li>Финальная обратная связь от Эраджа и ответы на вопросы</li>
+            </ul>
+            <p class="program-day__part">Итог дня</p>
+            <p>У участников есть:</p>
+            <ul class="program-day__list">
+              <li>понимание полного пайплайна работы с Seedance</li>
+              <li>финальный ролик</li>
+              <li>экспертная обратная связь</li>
+            </ul>
           </div>
         </article>
       </div>
@@ -203,9 +349,8 @@
   <section class="gallery" id="gallery">
     <div class="container">
       <p class="meta meta--tl">Галерея</p>
-      <h2 class="section-title">Работы наших учеников</h2>
+      <h2 class="section-title">Среди наших учеников</h2>
       <div class="gallery__students">
-        <p class="chalk-note gallery__students-label">Среди наших учеников</p>
         <div class="gallery__students-list">
           <div class="student-chip card">
             <img class="student-chip__photo" src="assets/img/student-lukashevich.jpg" alt="Андрей Лукашевич">
@@ -218,7 +363,7 @@
             <img class="student-chip__photo" src="assets/img/student-gvozdev.jpg" alt="Женя Гвоздев">
             <div class="student-chip__info">
               <span class="student-chip__name">Женя Гвоздев</span>
-              <span class="student-chip__role">Колорист — <strong>«Шапито Шоу», «Кухня в Париже»</strong>, реклама <strong>Reebok, Adidas, Nike</strong></span>
+              <span class="student-chip__role">Колорист — <strong>«О чём ещё говорят мужчины», «Кухня в Париже»</strong>, реклама <strong>Reebok, Adidas, Nike</strong>. Делал цветокоррекцию для клипа Melina Matsoukas «The Show Must Go On» для Amazon (2020)</span>
             </div>
           </div>
           <div class="student-chip card">
@@ -320,7 +465,7 @@
         </div>
       </div>
       <div class="speaker__info card">
-        <p class="meta meta--tl">Спикер</p>
+        <p class="meta meta--tl">Основатель школы</p>
         <h2 class="section-title">Эрадж Нидоев</h2>
         <p class="speaker__roles">Режиссёр · Креативный директор · AI Director</p>
         <p>10+ лет в реальном кино и съёмке рекламы на площадке. Работал с крупнейшими российскими и мировыми брендами. Академическая режиссёрская база — перенесена в ИИ.</p>
@@ -345,40 +490,22 @@
     </div>
   </section>
 
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <p class="meta meta--tl">Стоимость</p>
-      <div class="pricing__card card card--accent">
-        <p class="pricing__price"><span class="pricing__price-value" data-count-to="28000">0</span> ₽</p>
-        <p class="pricing__note">Доступна рассрочка</p>
-        <ul class="pricing__features">
-          <li>7 дней практики на реальном проекте для ОККО</li>
-          <li>Личная обратная связь от Эраджа Нидоева</li>
-          <li>Разбор от экспертов в финале</li>
-          <li>Готовый ролик в портфолио</li>
-        </ul>
-        <a href="#cta-placeholder" class="btn btn-cta">Записаться на интенсив</a>
-      </div>
-    </div>
-  </section>
-
   <section class="testimonials" id="testimonials">
     <div class="container">
       <p class="meta meta--tl">Отзывы</p>
       <h2 class="section-title">Что говорят выпускники</h2>
-      <div class="testimonials__grid">
-        <blockquote class="card testimonial">
-          <p>«Заглушка: замените реальным отзывом ученика.»</p>
-          <cite>Имя Фамилия — роль</cite>
-        </blockquote>
-        <blockquote class="card testimonial">
-          <p>«Заглушка: замените реальным отзывом ученика.»</p>
-          <cite>Имя Фамилия — роль</cite>
-        </blockquote>
-        <blockquote class="card testimonial">
-          <p>«Заглушка: замените реальным отзывом ученика.»</p>
-          <cite>Имя Фамилия — роль</cite>
-        </blockquote>
+      <div class="testimonials-carousel">
+        <button class="testimonials-carousel__btn testimonials-carousel__btn--prev" aria-label="Предыдущий отзыв">‹</button>
+        <div class="testimonials-carousel__track" id="testimonialsTrack">
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-1.jpg" width="606" height="409" alt="Отзыв ученицы интенсива — Динара Дышлевская"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-2.jpg" width="595" height="237" alt="Отзыв ученика интенсива"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-3.jpg" width="475" height="150" alt="Отзыв ученика интенсива"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-4.jpg" width="593" height="219" alt="Отзыв ученика интенсива"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-5.jpg" width="602" height="215" alt="Отзыв ученика интенсива"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-6.jpg" width="589" height="389" alt="Отзыв ученика интенсива"></figure>
+          <figure class="testimonials-carousel__slide"><img src="assets/img/testimonial-7.jpg" width="597" height="254" alt="Отзыв ученика интенсива"></figure>
+        </div>
+        <button class="testimonials-carousel__btn testimonials-carousel__btn--next" aria-label="Следующий отзыв">›</button>
       </div>
     </div>
   </section>
@@ -390,26 +517,70 @@
       <div class="faq__list">
         <article class="faq-item card" data-open="false">
           <button class="faq-item__toggle" aria-expanded="false">Нужен ли опыт в видеомонтаже?</button>
-          <div class="faq-item__content"><p>Нет, программа рассчитана на новичков в AI-видео — базовые навыки монтажа объясняются в рамках интенсива.</p></div>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p>Нет, программа рассчитана на <span class="chalk-underline"><strong>новичков в AI-видео</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — базовые навыки монтажа объясняются в рамках интенсива.</p></div>
         </article>
         <article class="faq-item card" data-open="false">
           <button class="faq-item__toggle" aria-expanded="false">Что нужно для участия технически?</button>
-          <div class="faq-item__content"><p>Компьютер с доступом в интернет и доступ к Seedance 2.5 — как подключиться, расскажем перед стартом.</p></div>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p>Компьютер с доступом в интернет и доступ к <span class="chalk-underline"><strong>Seedance 2.5</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — как подключиться, расскажем перед стартом.</p></div>
         </article>
         <article class="faq-item card" data-open="false">
           <button class="faq-item__toggle" aria-expanded="false">Что я получу в конце интенсива?</button>
-          <div class="faq-item__content"><p>Готовый видеоролик в портфолио, сделанный на реальном проекте для ОККО, и обратную связь от Эраджа и приглашённых экспертов.</p></div>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p><span class="chalk-underline"><strong>Готовый видеоролик в портфолио</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span>, сделанный на реальном проекте для ОККО, и обратную связь от Эраджа и приглашённых экспертов.</p></div>
         </article>
         <article class="faq-item card" data-open="false">
           <button class="faq-item__toggle" aria-expanded="false">Есть ли рассрочка?</button>
-          <div class="faq-item__content"><p>Да, оплату можно разбить на части — детали уточняются при записи.</p></div>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p>Да, оплату можно <span class="chalk-underline"><strong>разбить на части</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — детали уточняются при записи.</p></div>
+        </article>
+        <article class="faq-item card" data-open="false">
+          <button class="faq-item__toggle" aria-expanded="false">Лекции в записи?</button>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p>Нет. <span class="chalk-underline"><strong>Живые лекции с преподавателем</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> — вопросы задаёшь и получаешь ответы в реальном времени. Доступ к материалам остаётся после курса.</p></div>
+        </article>
+        <article class="faq-item card" data-open="false">
+          <button class="faq-item__toggle" aria-expanded="false">Что если не успею за 10 дней?</button>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p><span class="chalk-underline"><strong>Куратор помогает уложиться в сроки</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span>, материалы сохраняются. Но заниматься нужно ежедневно — формат экспресс, поблажек на «забил неделю» не будет.</p></div>
+        </article>
+        <article class="faq-item card" data-open="false">
+          <button class="faq-item__toggle" aria-expanded="false">Гарантия работы?</button>
+          <svg class="faq-item__arrow" viewBox="0 0 40 34" aria-hidden="true">
+            <path class="faq-item__arrow-shaft" d="M19,3 C15,12 24,20 19,29" />
+            <path class="faq-item__arrow-head" d="M10,22 L19,31 L28,22" />
+          </svg>
+          <div class="faq-item__content"><p>Гарантий нет. <span class="chalk-underline"><strong>Лучших студентов берём в продакшн</strong><svg class="chalk-underline__svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9" /></svg></span> по результатам защиты — это зависит от качества твоей работы, а не от факта оплаты.</p></div>
         </article>
       </div>
     </div>
   </section>
 
   <section class="final-cta" id="final-cta">
+    <video class="final-cta__video" autoplay muted loop playsinline poster="assets/img/final-cta-poster.jpg">
+      <source src="assets/video/final-cta.mp4" type="video/mp4">
+    </video>
     <canvas class="final-cta__shader js-shader-canvas" aria-hidden="true"></canvas>
+    <div class="final-cta__overlay"></div>
     <div class="container final-cta__inner">
       <p class="meta meta--tl">Старт 17 сентября 2026</p>
       <h2 class="section-title">Успей попасть в поток</h2>
@@ -419,7 +590,7 @@
         <div class="countdown__unit"><span class="countdown__value" data-unit="minutes">00</span><span class="countdown__label">минут</span></div>
         <div class="countdown__unit"><span class="countdown__value" data-unit="seconds">00</span><span class="countdown__label">секунд</span></div>
       </div>
-      <a href="#cta-placeholder" class="btn btn-cta">Записаться на интенсив</a>
+      <a href="#cta-placeholder" class="btn btn-cta">Предзапись на интенсив</a>
     </div>
   </section>
 </main>
