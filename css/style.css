@@ -318,7 +318,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .gallery__cases-label--studio { margin-top: 40px; }
 @media (min-width: 768px) {
   .gallery__grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery__grid--studio { grid-template-columns: repeat(4, 1fr); }
+  /* four items, so 2×2 keeps the tiles large without an orphan in the row */
+  .gallery__grid--studio { grid-template-columns: repeat(2, 1fr); }
 }
 
 .lightbox {
