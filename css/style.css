@@ -329,6 +329,36 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .gallery__grid--studio { grid-template-columns: repeat(2, 1fr); }
 }
 
+.clients { margin-top: 56px; }
+.clients__label { display: inline-block; margin-bottom: 20px; transform: rotate(-1deg); }
+.clients__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 24px;
+  align-items: center;
+}
+.clients__item { display: flex; align-items: center; justify-content: center; }
+.clients__logo {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+.clients__item:hover .clients__logo { opacity: 1; }
+/* the marks have very different proportions, so cap each by height
+   to even them out optically rather than matching raw pixel size */
+.clients__logo--yandex { max-height: 44px; }
+.clients__logo--avito { max-height: 38px; }
+.clients__logo--fonbet { max-height: 30px; }
+/* emblem stacked over the wordmark, so it needs more height to read */
+.clients__logo--cherna { max-height: 54px; }
+@media (min-width: 768px) {
+  .clients__list { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
