@@ -316,9 +316,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 .gallery__item video { width: 100%; height: 100%; object-fit: cover; }
 .gallery__cases-label--studio { margin-top: 40px; }
+/* the studio grid is two columns at every width, so an odd last tile is
+   centred at the same width instead of hanging alone on the left */
+.gallery__grid--studio > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 8px);
+}
 @media (min-width: 768px) {
   .gallery__grid { grid-template-columns: repeat(3, 1fr); }
-  /* four items, so 2×2 keeps the tiles large without an orphan in the row */
+  /* two columns keeps the studio tiles large */
   .gallery__grid--studio { grid-template-columns: repeat(2, 1fr); }
 }
 
