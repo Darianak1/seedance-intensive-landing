@@ -98,7 +98,7 @@ function initGalleryAutoplay() {
 }
 
 function initCountdown() {
-  const START_DATE = new Date('2026-09-17T10:00:00+03:00');
+  const START_DATE = new Date('2026-09-19T10:00:00+03:00');
   const countdownEl = document.getElementById('countdown');
   if (!countdownEl) return;
 
@@ -152,7 +152,7 @@ function initScrollAnimations() {
     });
   });
 
-  document.querySelectorAll('.trust__stat-circle path, .chalk-underline__svg path').forEach((path) => {
+  document.querySelectorAll('.chalk-underline__svg path, .inside__arrow path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
@@ -164,22 +164,6 @@ function initScrollAnimations() {
     });
   });
 
-  gsap.from('.trust__note', {
-    opacity: 0,
-    scale: 0.7,
-    duration: 0.5,
-    delay: 0.9,
-    scrollTrigger: { trigger: '.trust__note', start: 'top 90%' },
-  });
-
-  gsap.from('.trust__stamp', {
-    opacity: 0,
-    scale: 2.4,
-    rotation: 25,
-    duration: 0.5,
-    ease: 'back.out(2.5)',
-    scrollTrigger: { trigger: '.trust__claim', start: 'top 75%' },
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
