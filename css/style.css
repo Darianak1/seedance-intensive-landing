@@ -312,7 +312,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   display: inline-block;
   /* a name should never break inside its own circle */
   white-space: nowrap;
-  padding: 2px 14px;
+  /* the ring is drawn near the edges of its box, so the name needs
+     clearance or the stroke runs through the last letters */
+  padding: 4px 26px;
 }
 .chalk-circle__svg {
   position: absolute;
