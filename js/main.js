@@ -213,7 +213,7 @@ function initScrollAnimations() {
       });
   });
 
-  document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path').forEach((path) => {
+  document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path, .chalk-circle__svg path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;

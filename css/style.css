@@ -299,11 +299,36 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   font-family: var(--font-chalk);
   /* Caveat runs small for its point size, so it needs a step up to sit
      level with the body text around it */
-  font-size: 1.4rem;
-  line-height: 1.2;
+  font-size: 1.5rem;
+  /* room for the circles to clear each other when the line wraps */
+  line-height: 2.1;
   color: var(--acid);
   transform: rotate(-1deg);
   transform-origin: left center;
+}
+/* each name gets a hand-drawn ring, the same trick the stat circles used */
+.chalk-circle {
+  position: relative;
+  display: inline-block;
+  /* a name should never break inside its own circle */
+  white-space: nowrap;
+  padding: 2px 14px;
+}
+.chalk-circle__svg {
+  position: absolute;
+  left: 0;
+  top: -6px;
+  width: 100%;
+  height: calc(100% + 12px);
+  overflow: visible;
+  pointer-events: none;
+}
+.chalk-circle__svg path {
+  fill: none;
+  stroke: var(--acid);
+  stroke-width: 3;
+  /* the ring stretches to each name, the line weight should not */
+  vector-effect: non-scaling-stroke;
 }
 /* the squiggle rides as a background rather than an absolutely placed
    SVG: an inline-block with an overlaid SVG cannot break across lines,
