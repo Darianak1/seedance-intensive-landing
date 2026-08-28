@@ -755,6 +755,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 
 .testimonials { padding: 80px 0; }
 .testimonials__hint { display: block; margin: -20px 0 14px; font-size: 1.4rem; }
+.testimonials__cta { display: block; width: fit-content; margin: 36px auto 0; }
 .testimonials-carousel { position: relative; display: flex; align-items: center; gap: 12px; }
 /* fades the right edge so the strip visibly continues past the fold */
 .testimonials-carousel::after {
