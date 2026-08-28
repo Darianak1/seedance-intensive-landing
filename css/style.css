@@ -336,6 +336,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   opacity: 1;
   transform: translateX(0);
 }
+/* the first day shows its arrow unprompted, so the list reads as
+   clickable before anyone hovers; a slow nudge draws the eye */
+.program-day:first-child[data-open="false"] .program-day__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  animation: program-arrow-nudge 2.4s ease-in-out infinite;
+}
+@keyframes program-arrow-nudge {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, 5px); }
+}
 .program-day__content {
   max-height: 0;
   overflow: hidden;
