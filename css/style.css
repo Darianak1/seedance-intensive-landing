@@ -436,6 +436,60 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .student-chip__role { display: block; font-size: 0.8rem; opacity: 0.65; line-height: 1.4; }
 .student-chip__role strong { color: var(--acid); font-weight: 700; opacity: 1; }
 .student-chip__photo--placeholder { background: var(--card-bg); }
+
+/* Гвоздев is pulled out of the grid: bigger card, opens his quote */
+.student-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 12px;
+  border-color: var(--border-acid);
+  background: var(--card-bg-acid);
+}
+.student-feature__photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-acid);
+}
+.student-feature__info { min-width: 0; }
+.student-feature__cta {
+  display: block;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.student-feature__cta:hover { opacity: 0.75; }
+
+.lightbox__quote {
+  display: none;
+  max-width: min(640px, 88vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: clamp(24px, 5vw, 40px);
+  border: 1px solid var(--border-acid);
+  border-radius: 16px;
+  background: var(--bg-alt);
+}
+.lightbox__quote blockquote p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+.lightbox__quote blockquote p + p { margin-top: 16px; }
+.lightbox__quote figcaption {
+  margin-top: 22px;
+  font-family: var(--font-chalk);
+  font-size: 1.4rem;
+  color: var(--acid);
+}
 .gallery__cases-label { display: inline-block; margin: 8px 0 16px; transform: rotate(-1deg); }
 .gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .gallery__item {

@@ -101,11 +101,34 @@ function initGallery() {
     });
   });
 
-  closeBtn.addEventListener('click', () => {
+  const quote = lightbox.querySelector('.lightbox__quote');
+  document.querySelectorAll('[data-quote]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      lightboxVideo.pause();
+      lightboxVideo.style.display = 'none';
+      lightboxVideo.src = '';
+      lightboxImage.style.display = 'none';
+      lightboxImage.src = '';
+      quote.style.display = 'block';
+      lightbox.classList.add('is-open');
+    });
+  });
+
+  const close = () => {
     lightboxVideo.pause();
     lightboxVideo.src = '';
     lightboxImage.src = '';
+    if (quote) quote.style.display = 'none';
     lightbox.classList.remove('is-open');
+  };
+
+  closeBtn.addEventListener('click', close);
+  // the quote is something you read, so give it the usual ways out
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
   });
 }
 
