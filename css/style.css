@@ -347,6 +347,43 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(0, 5px); }
 }
+
+/* long arrow running from the end of "готового ролика" across to day 1.
+   It hangs off the heading span so its start follows the text wherever
+   the line breaks, rather than sitting at a hardcoded offset. */
+.program__lead-arrow { display: none; }
+@media (min-width: 768px) {
+  .program .chalk-note { position: relative; }
+  .program__lead-arrow {
+    display: block;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 38%;
+    width: clamp(220px, 26vw, 380px);
+    /* fixed drop: if the height scaled with the width the arrow would
+       stop short of the day-1 card on narrower screens. The stroke is
+       non-scaling, so stretching the box only reshapes the curve. */
+    height: 84px;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 3;
+    animation: program-arrow-nudge 2.4s ease-in-out infinite;
+  }
+  .program__lead-arrow path {
+    fill: none;
+    stroke: var(--acid);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  /* the long arrow does the pointing now, so day 1 drops its small one */
+  .program-day:first-child[data-open="false"] .program-day__arrow {
+    opacity: 0;
+    transform: translateX(28px);
+    animation: none;
+  }
+}
 .program-day__content {
   max-height: 0;
   overflow: hidden;
