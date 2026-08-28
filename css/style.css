@@ -306,6 +306,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   transform: rotate(-1deg);
   transform-origin: left center;
 }
+.advantages__cta { display: block; width: fit-content; margin: 40px auto 0; }
+
 /* plain brand line: no rings, so it does not need the airy leading */
 .advantages__note--brands { line-height: 1.35; }
 .advantages__note-tail { opacity: 0.7; }
