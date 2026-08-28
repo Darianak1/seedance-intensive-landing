@@ -477,6 +477,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .clients__logo--fonbet { max-height: 30px; }
 /* emblem stacked over the wordmark, so it needs more height to read */
 .clients__logo--cherna { max-height: 54px; }
+.clients__logo--lada { max-height: 40px; }
+.clients__logo--juster { max-height: 26px; }
+.clients__logo--x5 { max-height: 34px; }
+.clients__logo--monarch { max-height: 46px; }
 @media (min-width: 768px) {
   .clients__list { grid-template-columns: repeat(4, 1fr); gap: 32px; }
 }
