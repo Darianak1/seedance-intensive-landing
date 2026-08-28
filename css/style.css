@@ -455,41 +455,62 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   flex-shrink: 0;
   border: 1px solid var(--border-acid);
 }
-.student-feature__info { min-width: 0; }
-.student-feature__cta {
-  display: block;
-  margin-top: 10px;
-  padding: 0;
-  border: none;
-  background: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-.student-feature__cta:hover { opacity: 0.75; }
+/* both columns need a basis, or the bio eats the row and squeezes the
+   bubble down to its min-width */
+.student-feature__info { flex: 1 1 300px; min-width: 0; }
 
-.lightbox__quote {
-  display: none;
-  max-width: min(640px, 88vw);
-  max-height: 85vh;
-  overflow-y: auto;
+/* comic-style bubble: sits beside him on wide screens with the tail
+   pointing back at his photo, and drops underneath with the tail
+   flipped upward once the row no longer fits */
+.speech-bubble {
+  position: relative;
+  flex: 1 1 420px;
+  min-width: 260px;
   margin: 0;
-  padding: clamp(24px, 5vw, 40px);
+  padding: 20px 24px;
   border: 1px solid var(--border-acid);
-  border-radius: 16px;
+  border-radius: 18px;
   background: var(--bg-alt);
 }
-.lightbox__quote blockquote p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.5;
+.speech-bubble p { font-size: 0.95rem; line-height: 1.5; }
+.speech-bubble p + p { margin-top: 12px; }
+.speech-bubble::before,
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
 }
-.lightbox__quote blockquote p + p { margin-top: 16px; }
-.lightbox__quote figcaption {
-  margin-top: 22px;
-  font-family: var(--font-chalk);
-  font-size: 1.4rem;
-  color: var(--acid);
+.speech-bubble::before {
+  top: 28px;
+  left: -14px;
+  border-width: 10px 14px 10px 0;
+  border-color: transparent var(--border-acid) transparent transparent;
 }
+.speech-bubble::after {
+  top: 29px;
+  left: -12px;
+  border-width: 9px 13px 9px 0;
+  border-color: transparent var(--bg-alt) transparent transparent;
+}
+@media (max-width: 900px) {
+  .student-feature { flex-wrap: wrap; }
+  .speech-bubble { flex-basis: 100%; margin-top: 8px; }
+  .speech-bubble::before {
+    top: -14px;
+    left: 30px;
+    border-width: 0 10px 14px 10px;
+    border-color: transparent transparent var(--border-acid) transparent;
+  }
+  .speech-bubble::after {
+    top: -12px;
+    left: 31px;
+    border-width: 0 9px 13px 9px;
+    border-color: transparent transparent var(--bg-alt) transparent;
+  }
+}
+
 .gallery__cases-label { display: inline-block; margin: 8px 0 16px; transform: rotate(-1deg); }
 .gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .gallery__item {
