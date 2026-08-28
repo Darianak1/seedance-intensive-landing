@@ -363,6 +363,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .program, .faq { overflow-x: clip; }
 
 .program { padding: 80px 0; }
+.program__cta { display: block; width: fit-content; margin: 40px auto 0; }
 .program__timeline { display: flex; flex-direction: column; gap: 16px; }
 .program-day__toggle {
   position: relative;
