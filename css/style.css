@@ -176,7 +176,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   opacity: 0.85;
 }
 .hero__title-accent { color: var(--acid); }
-.hero__subtitle { font-size: 1.25rem; max-width: 560px; margin-bottom: 12px; opacity: 0.9; }
+/* the Okko wordmark stands in for typing out ОККО */
+.hero__okko { height: 0.8em; width: auto; vertical-align: -0.04em; margin-left: 0.15em; }
+/* was body text at 90% opacity and disappeared under the headline —
+   the display face at full strength makes it read as a promise */
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 2vw, 1.6rem);
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
 .hero__start {
   font-family: var(--font-mono);
   font-size: 0.95rem;
@@ -184,7 +194,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   text-transform: uppercase;
   color: var(--acid);
   margin-bottom: 28px;
+  text-align: center;
 }
+.hero__cta { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
 
 .inside { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
 .inside__inner { width: 100%; text-align: center; }
