@@ -269,6 +269,21 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .advantages__number { flex-shrink: 0; min-width: 40px; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--acid); }
 .advantages__text { line-height: 1.5; padding-top: 4px; }
 .advantages__text strong { color: var(--white); }
+/* grid so the footnote can start at the left edge, under the number,
+   instead of being squeezed into the narrow number column */
+.advantages__item--note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  row-gap: 10px;
+  align-items: start;
+}
+.advantages__note {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.55;
+}
 .chalk-underline { position: relative; display: inline-block; }
 .chalk-underline__svg { position: absolute; left: 0; bottom: -8px; width: 100%; height: 10px; overflow: visible; pointer-events: none; }
 .chalk-underline__svg path { fill: none; stroke: var(--acid); stroke-width: 3; }
