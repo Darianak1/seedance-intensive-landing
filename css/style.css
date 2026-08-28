@@ -82,6 +82,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 .btn-cta { background: var(--acid); color: #000; }
 .btn-cta:hover { transform: scale(1.05); }
+.btn--lg { padding: 20px 44px; font-size: clamp(1rem, 1.6vw, 1.2rem); }
 
 .site-header {
   position: sticky;
@@ -253,6 +254,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__brand-logo--avito { max-height: 26px; }
 .inside__brand-logo--cherna { max-height: 36px; }
 .inside__brand-logo--yandex { max-height: 30px; }
+.inside__cta { margin-top: 44px; }
 
 @media (min-width: 768px) {
   .inside__fork--split { display: block; }
