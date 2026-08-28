@@ -192,7 +192,20 @@ function initScrollAnimations() {
     });
   });
 
-  document.querySelectorAll('.chalk-underline__svg path, .inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path').forEach((path) => {
+  // the underline is a background now, so it draws itself in by widening
+  // rather than by unrolling a stroke
+  document.querySelectorAll('.chalk-underline').forEach((el) => {
+    gsap.fromTo(el,
+      { backgroundSize: '0% 8px' },
+      {
+        backgroundSize: '100% 8px',
+        duration: 1.1,
+        ease: 'power1.inOut',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+      });
+  });
+
+  document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
