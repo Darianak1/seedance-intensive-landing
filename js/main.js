@@ -31,6 +31,46 @@ function initTestimonialsCarousel() {
   };
   prevBtn.addEventListener('click', () => scrollBySlide(-1));
   nextBtn.addEventListener('click', () => scrollBySlide(1));
+
+  // dots: on touch the arrows are hidden, so this is the only signal that
+  // there is more than one testimonial
+  const dotsWrap = document.getElementById('testimonialsDots');
+  const slides = [...track.querySelectorAll('.testimonials-carousel__slide')];
+  if (!dotsWrap || slides.length < 2) return;
+
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'testimonials-carousel__dot';
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Отзыв ' + (i + 1));
+    dot.addEventListener('click', () => {
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  const syncDots = () => {
+    // pick the slide whose left edge is closest to the track's scroll position
+    let best = 0;
+    let bestGap = Infinity;
+    slides.forEach((slide, i) => {
+      const gap = Math.abs(slide.offsetLeft - track.offsetLeft - track.scrollLeft);
+      if (gap < bestGap) { bestGap = gap; best = i; }
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === best);
+      dot.setAttribute('aria-selected', String(i === best));
+    });
+  };
+
+  let raf = 0;
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(syncDots);
+  }, { passive: true });
+  syncDots();
 }
 
 function initGallery() {
