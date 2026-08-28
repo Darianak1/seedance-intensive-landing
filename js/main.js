@@ -152,7 +152,7 @@ function initScrollAnimations() {
     });
   });
 
-  document.querySelectorAll('.chalk-underline__svg path, .inside__arrow path').forEach((path) => {
+  document.querySelectorAll('.chalk-underline__svg path, .inside__arrow path, .inside__fork path, .inside__link-arrow path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;

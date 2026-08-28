@@ -215,8 +215,47 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   border: 2px dashed var(--border-acid);
   border-radius: 12px;
 }
-.inside__note { margin-top: 32px; font-size: clamp(1rem, 1.7vw, 1.3rem); }
-.inside__note strong { color: var(--acid); }
+.inside__hire {
+  margin-top: 40px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+  font-size: clamp(1.3rem, 2.6vw, 2.1rem);
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inside__hire strong { color: var(--acid); font-weight: 800; }
+
+.inside__fork { display: block; height: auto; margin: 14px auto 10px; filter: url(#chalkRough); }
+.inside__fork path,
+.inside__link-arrow path {
+  fill: none;
+  stroke: var(--acid);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.inside__fork--split { display: none; width: min(400px, 90%); }
+.inside__fork--single { width: 64px; }
+
+.inside__outcome { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center; }
+.inside__stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.inside__stat-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--acid); line-height: 1; }
+.inside__stat-label { font-size: 0.95rem; opacity: 0.8; }
+.inside__link { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.inside__link-label { font-size: 1.4rem; }
+/* stacked on mobile, so the connector points down instead of across */
+.inside__link-arrow { width: 70px; height: auto; transform: rotate(90deg); filter: url(#chalkRough); }
+.inside__brands ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.inside__brands li { font-family: var(--font-display); font-weight: 700; font-size: clamp(0.95rem, 1.5vw, 1.15rem); }
+
+@media (min-width: 768px) {
+  .inside__fork--split { display: block; }
+  .inside__fork--single { display: none; }
+  .inside__outcome { grid-template-columns: 1fr auto 1fr; gap: 20px; }
+  .inside__link-arrow { width: 110px; transform: none; }
+}
 
 .advantages { padding: 80px 0; }
 .advantages__list { display: flex; flex-direction: column; gap: 14px; }
