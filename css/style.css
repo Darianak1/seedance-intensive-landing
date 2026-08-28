@@ -254,6 +254,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__brand-logo--avito { max-height: 26px; }
 .inside__brand-logo--cherna { max-height: 36px; }
 .inside__brand-logo--yandex { max-height: 30px; }
+.inside__brands-more { margin-top: 14px; font-size: 1.25rem; transform: rotate(-1deg); }
 .inside__cta { margin-top: 44px; }
 
 @media (min-width: 768px) {
