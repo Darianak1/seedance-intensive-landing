@@ -68,7 +68,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   transform: rotate(-2deg);
 }
 
-.chalk-doodle { filter: url(#chalkRough); }
 
 .btn {
   display: inline-block;
@@ -189,7 +188,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
 .inside__inner { width: 100%; text-align: center; }
 .inside__title { font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 26ch; margin: 0 auto; }
-.inside__arrow { display: block; width: clamp(64px, 8vw, 96px); height: auto; margin: 16px auto 10px; filter: url(#chalkRough); }
+.inside__arrow { display: block; width: clamp(64px, 8vw, 96px); height: auto; margin: 16px auto 10px; }
 .inside__arrow path { fill: none; stroke: var(--acid); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .inside__video-wrap {
   position: relative;
@@ -227,7 +226,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 .inside__hire strong { color: var(--acid); font-weight: 800; }
 
-.inside__fork { display: block; height: auto; margin: 14px auto 10px; filter: url(#chalkRough); }
+.inside__fork { display: block; height: auto; margin: 14px auto 10px; }
 .inside__fork path,
 .inside__link-arrow path {
   fill: none;
@@ -246,9 +245,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__link { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .inside__link-label { font-size: 1.4rem; }
 /* stacked on mobile, so the connector points down instead of across */
-.inside__link-arrow { width: 70px; height: auto; transform: rotate(90deg); filter: url(#chalkRough); }
-.inside__brands ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
-.inside__brands li { font-family: var(--font-display); font-weight: 700; font-size: clamp(0.95rem, 1.5vw, 1.15rem); }
+.inside__link-arrow { width: 70px; height: auto; transform: rotate(90deg); }
+.inside__brands ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 24px; }
+.inside__brand-logo { display: block; width: auto; height: auto; max-width: 100%; object-fit: contain; opacity: 0.85; }
+/* same optical balancing as the clients strip, one size down for the card */
+.inside__brand-logo--fonbet { max-height: 22px; }
+.inside__brand-logo--avito { max-height: 26px; }
+.inside__brand-logo--cherna { max-height: 36px; }
+.inside__brand-logo--yandex { max-height: 30px; }
 
 @media (min-width: 768px) {
   .inside__fork--split { display: block; }
@@ -293,7 +297,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   height: 44px;
   opacity: 0;
   pointer-events: none;
-  filter: url(#chalkRough);
+ 
   transform: translateX(28px);
   transition: opacity 0.3s ease, transform 0.35s ease;
   z-index: 2;
@@ -572,7 +576,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   height: 44px;
   opacity: 0;
   pointer-events: none;
-  filter: url(#chalkRough);
+ 
   transform: translateX(28px);
   transition: opacity 0.3s ease, transform 0.35s ease;
   z-index: 2;
