@@ -171,13 +171,15 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   display: block;
   margin-top: 16px;
   max-width: 24ch;
-  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+  opacity: 0.85;
 }
 .hero__title-accent { color: var(--acid); }
-/* the Okko wordmark stands in for typing out ОККО */
-.hero__okko { height: 1.15em; width: auto; vertical-align: -0.18em; margin-left: 0.18em; }
+/* the wordmark carries the partnership on its own line, so the wording
+   above it can step back to a supporting role */
+.hero__okko { display: block; height: clamp(38px, 6vw, 76px); width: auto; margin-top: 10px; }
 /* was body text at 90% opacity and disappeared under the headline —
    the display face at full strength makes it read as a promise */
 .hero__subtitle {
