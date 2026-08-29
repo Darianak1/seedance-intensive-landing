@@ -213,12 +213,6 @@ function initScrollAnimations() {
       });
   });
 
-  // .hero__title-sub-frame is deliberately excluded: it is a very wide,
-  // short box (viewBox stretched non-uniformly via preserveAspectRatio
-  // "none"), and animating stroke-dashoffset on that shape hits a
-  // Chromium rendering bug that leaves part of the stroke undrawn even
-  // once the animation completes. It sits above the fold and needs no
-  // scroll-in effect anyway, so it just renders as a plain solid stroke.
   document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path, .chalk-circle__svg path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;

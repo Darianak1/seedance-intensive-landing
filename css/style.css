@@ -166,41 +166,25 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__lockup-x { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.8rem); line-height: 1; opacity: 0.65; }
 .hero__lockup-logo { height: clamp(1.4rem, 2.9vw, 2.2rem); width: auto; display: block; }
 .hero__title { font-size: clamp(1.75rem, 3.7vw, 2.9rem); margin-bottom: 20px; max-width: 20ch; }
-/* the ОККО line is the hook, so it outweighs the line above it */
-/* hand-drawn frame around the phrase + logo, in the same chalk hand as
-   the rings and arrows elsewhere on the page */
+/* the promise line stays with the headline, left-aligned; the mark
+   below breaks out on its own, centred, so it reads as a stamp rather
+   than part of the sentence */
 .hero__title-sub {
-  position: relative;
-  display: inline-block;
-  margin-top: 22px;
-  padding: 20px 30px;
-  max-width: 24ch;
-}
-.hero__title-sub-inner {
   display: block;
+  margin-top: 16px;
+  max-width: 24ch;
   font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   font-weight: 500;
   line-height: 1.25;
   opacity: 0.85;
 }
-.hero__title-sub-frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-.hero__title-sub-frame path {
-  fill: none;
-  stroke: var(--acid);
-  stroke-width: 3;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
 .hero__title-accent { color: var(--acid); }
-/* the wordmark carries the partnership inside the same frame */
-.hero__okko { display: block; height: clamp(32px, 5vw, 60px); width: auto; margin-top: 10px; }
+.hero__okko {
+  display: block;
+  height: clamp(46px, 7vw, 88px);
+  width: auto;
+  margin: 22px auto 34px;
+}
 /* was body text at 90% opacity and disappeared under the headline —
    the display face at full strength makes it read as a promise */
 .hero__subtitle {
