@@ -204,6 +204,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
 .inside__inner { width: 100%; text-align: center; }
 .inside__title { font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 26ch; margin: 0 auto; }
+.inside__title-accent { display: block; margin-top: 8px; color: var(--acid); }
 .inside__arrow { display: block; width: clamp(64px, 8vw, 96px); height: auto; margin: 16px auto 10px; }
 .inside__arrow path { fill: none; stroke: var(--acid); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .inside__video-wrap {
