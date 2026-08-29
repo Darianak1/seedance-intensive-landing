@@ -171,7 +171,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   display: block;
   margin-top: 16px;
   max-width: 24ch;
-  font-size: clamp(1.35rem, 2.9vw, 2.35rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -183,16 +183,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__subtitle {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  /* deliberately well under the ОККО line above: same face, so it still
+     reads as a claim rather than filler, but it no longer competes */
+  font-size: clamp(0.88rem, 1.25vw, 1.05rem);
   line-height: 1.2;
   /* pushed down to group with the date and button, leaving the ОККО
-     line room of its own */
-  margin-top: clamp(30px, 7vh, 76px);
+     line a band of its own */
+  margin-top: clamp(46px, 12vh, 130px);
   margin-bottom: 10px;
 }
 .hero__start {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--acid);
