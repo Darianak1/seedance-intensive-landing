@@ -925,5 +925,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   /* let the promise line breathe away from the headline */
   .hero__title-sub { margin-top: 28px; }
   .hero__okko { height: 52px; margin: 16px auto 24px; }
-  .hero__subtitle { margin-top: 26px; }
+  /* group the promise + date with the button rather than with the mark */
+  .hero__subtitle { margin-top: 88px; }
+  .hero__start { margin-bottom: 0; }
+  .hero__cta { margin-top: 0; }
 }
