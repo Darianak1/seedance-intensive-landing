@@ -921,12 +921,19 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 @media (max-width: 640px) {
   .hero__content { padding-top: 16px; padding-bottom: 56px; gap: 0; }
   .hero__main { margin-top: auto; margin-bottom: auto; padding-top: 6vh; }
-  .hero__title { margin-bottom: 0; }
+  .hero__title { margin-bottom: 0; font-size: 2.05rem; }
   /* let the promise line breathe away from the headline */
-  .hero__title-sub { margin-top: 28px; }
+  .hero__title-sub { margin-top: 28px; font-size: 1.1rem; }
   .hero__okko { height: 52px; margin: 16px auto 24px; }
   /* group the promise + date with the button rather than with the mark */
   .hero__subtitle { margin-top: 88px; }
   .hero__start { margin-bottom: 0; }
   .hero__cta { margin-top: 0; }
+}
+
+/* on the narrowest phones the enlarged headline breaks "по Seedance 2.5"
+   across two lines — step it back down just enough to keep it on one */
+@media (max-width: 380px) {
+  .hero__title { font-size: 1.8rem; }
+  .hero__title-sub { font-size: 1.02rem; }
 }
