@@ -703,8 +703,11 @@
   <img class="lightbox__image" alt="">
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- served from our own host: cdnjs sits behind Cloudflare, which is
+     unreliable from Russian networks — the scroll animations were the
+     first thing to go missing there -->
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
 <script src="js/countdown.js"></script>
 <script src="js/shader-bg.js"></script>
 <script src="js/main.js"></script>
