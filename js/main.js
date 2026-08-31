@@ -231,12 +231,12 @@ function initScrollAnimations() {
 
   // the mark, then the promise and the date: each lands on the beat
   // after the one above it finishes
-  [['.hero__okko', 1.6], ['.hero__subtitle', 2.1], ['.hero__start', 2.35]].forEach(([selector, delay]) => {
+  [['.hero__okko', 1.2], ['.hero__subtitle', 1.4], ['.hero__start', 1.55]].forEach(([selector, delay]) => {
     document.querySelectorAll(selector).forEach((el) => {
       gsap.to(el, {
         opacity: 1,
         scale: 1,
-        duration: 0.9,
+        duration: 0.7,
         delay,
         ease: 'power2.out',
         scrollTrigger: { trigger: el, start: 'top 85%' },

@@ -202,8 +202,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 /* the same neon lift as the mark, so the closing lines read as a set */
 .hero__subtitle,
 .hero__start {
-  text-shadow: 0 0 16px rgba(255, 110, 199, 0.5),
-               0 0 38px rgba(255, 110, 199, 0.28);
+  text-shadow: 0 0 6px rgba(255, 110, 199, 0.85),
+               0 0 18px rgba(255, 110, 199, 0.7),
+               0 0 44px rgba(255, 110, 199, 0.45);
 }
 /* was body text at 90% opacity and disappeared under the headline —
    the display face at full strength makes it read as a promise */
