@@ -168,6 +168,8 @@ function initScrollAnimations() {
     document.querySelectorAll('[data-count-to]').forEach((el) => {
       el.textContent = Number(el.dataset.countTo).toLocaleString('ru-RU');
     });
+    // nothing will draw them in, so show them as they are
+    document.documentElement.classList.remove('js-anim');
     return;
   }
   gsap.registerPlugin(ScrollTrigger);

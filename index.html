@@ -2,6 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<!-- set before first paint: the chalk strokes start empty so they are not
+     already drawn while the page (and GSAP, from a CDN) is still loading.
+     main.js removes it again if animation is skipped, so the strokes
+     still show when GSAP never arrives. -->
+<script>document.documentElement.className += ' js-anim';</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Интенсив по Seedance 2.5 — CreAIte</title>
 <meta name="description" content="7-дневный интенсив по AI-генерации видео в Seedance 2.5 от школы CreAIte. Реальный проект для ОККО.">

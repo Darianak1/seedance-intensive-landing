@@ -369,6 +369,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+/* only while the page is going to animate them — see the head script */
+.js-anim .chalk-underline { background-size: 0% 8px; }
 
 /* the hover arrows rest at right:-18px plus a 28px offset, which pushed
    the page ~21px wider than the viewport — enough that a horizontal
