@@ -206,9 +206,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 /* the clock only starts at the first paint, and the web fonts hold that
    up — so these delays are deliberately short: whatever they are, the
    wait the visitor actually feels is first-paint plus this. */
-.hero__okko { animation: hero-rise 0.45s ease-out 0.3s both; }
-.hero__subtitle { animation: hero-rise 0.45s ease-out 0.4s both; }
-.hero__start { animation: hero-rise 0.45s ease-out 0.5s both; }
+.hero__okko { animation: hero-rise 0.75s ease-out 0.5s both; }
+.hero__subtitle { animation: hero-rise 0.75s ease-out 0.7s both; }
+.hero__start { animation: hero-rise 0.75s ease-out 0.9s both; }
 /* the same neon lift as the mark, so the closing lines read as a set */
 .hero__subtitle,
 .hero__start {
@@ -420,7 +420,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   from { background-position: 100% 0; }
   to { background-position: 0% 0; }
 }
-.hero__sweep { animation: hero-fill 1s ease-in-out 0.15s both; }
+.hero__sweep { animation: hero-fill 1.6s ease-in-out 0.25s both; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__okko,
