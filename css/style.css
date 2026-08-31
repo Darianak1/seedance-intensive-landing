@@ -19,6 +19,7 @@
   --font-display: 'Unbounded', sans-serif;
   --font-body: 'Golos Text', sans-serif;
   --font-chalk: 'Caveat', cursive;
+  --neon-pink: #FF2FB0;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -180,7 +181,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   /* extra leading so the drawn-in underline under a wrapped first line
      clears the second line's text */
   line-height: 1.75;
-  opacity: 0.85;
+  /* full strength: the fill is a neon and 85% opacity muddied it */
+  opacity: 1;
 }
 .hero__title-accent { color: var(--acid); }
 .hero__okko {
@@ -377,7 +379,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
    gradient is twice the width of the phrase and slides across it, so
    the colour front sweeps rather than the text fading as a whole. */
 .hero__sweep {
-  background-image: linear-gradient(90deg, var(--acid) 0 50%, #fff 50% 100%);
+  background-image: linear-gradient(90deg, var(--neon-pink) 0 50%, #fff 50% 100%);
   background-size: 200% 100%;
   background-position: 0% 0;
   background-repeat: no-repeat;
