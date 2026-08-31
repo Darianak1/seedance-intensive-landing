@@ -222,7 +222,7 @@ function initScrollAnimations() {
   document.querySelectorAll('.hero__sweep').forEach((el) => {
     gsap.to(el, {
       backgroundPosition: '0% 0',
-      duration: 2.2,
+      duration: 1.2,
       delay: 0.6,
       ease: 'power1.inOut',
       scrollTrigger: { trigger: el, start: 'top 85%' },
@@ -234,7 +234,7 @@ function initScrollAnimations() {
       opacity: 1,
       scale: 1,
       duration: 0.9,
-      delay: 2.6,
+      delay: 1.6,
       ease: 'power2.out',
       scrollTrigger: { trigger: el, start: 'top 85%' },
     });
