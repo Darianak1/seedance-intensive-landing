@@ -172,7 +172,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__title-sub {
   display: block;
   margin-top: 16px;
-  max-width: 24ch;
+  /* deliberately narrow: the phrase reads as a stacked two-line block
+     rather than running the full width of the headline */
+  max-width: 19ch;
   font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   font-weight: 500;
   /* extra leading so the drawn-in underline under a wrapped first line
@@ -945,8 +947,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .hero__main { margin-top: auto; margin-bottom: auto; padding-top: 6vh; }
   .hero__title { margin-bottom: 0; font-size: 2.05rem; }
   /* let the promise line breathe away from the headline */
-  .hero__title-sub { margin-top: 28px; font-size: 1.1rem; }
-  .hero__okko { height: 52px; margin: 20px auto 24px; }
+  .hero__title-sub { margin-top: 40px; font-size: 1.1rem; }
+  .hero__okko { height: 52px; margin: 44px auto 24px; }
   /* group the promise + date with the button rather than with the mark */
   .hero__subtitle { margin-top: 88px; }
   .hero__start { margin-bottom: 0; }
