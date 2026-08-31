@@ -914,3 +914,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
     padding: 12px 0;
   }
 }
+
+/* mobile hero: the block filled the screen edge to edge and the headline
+   sat right under the lockup on top of the busiest part of the video.
+   Tighten the internal gaps so the group can be pushed down as a whole. */
+@media (max-width: 640px) {
+  .hero__content { padding-top: 16px; padding-bottom: 56px; gap: 0; }
+  .hero__main { margin-top: auto; padding-top: 14vh; }
+  .hero__title { margin-bottom: 0; }
+  .hero__okko { height: 56px; margin: 26px auto 26px; }
+  .hero__subtitle { margin-top: 26px; }
+}
