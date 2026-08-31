@@ -195,10 +195,20 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   filter: drop-shadow(0 0 18px rgba(255, 110, 199, 0.55))
           drop-shadow(0 0 42px rgba(255, 110, 199, 0.3));
 }
-/* lands after the phrase above has finished filling in */
-.js-anim .hero__okko,
-.js-anim .hero__subtitle,
-.js-anim .hero__start { opacity: 0; transform: scale(0.94); }
+/* The hero intro runs on CSS keyframes, not GSAP. GSAP comes from a CDN,
+   and while it was in flight these three were held invisible — on a slow
+   device or an in-app browser that read as the date taking seconds to
+   turn up. CSS starts with the first paint and needs nothing to arrive. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+/* the clock only starts at the first paint, and the web fonts hold that
+   up — so these delays are deliberately short: whatever they are, the
+   wait the visitor actually feels is first-paint plus this. */
+.hero__okko { animation: hero-rise 0.45s ease-out 0.3s both; }
+.hero__subtitle { animation: hero-rise 0.45s ease-out 0.4s both; }
+.hero__start { animation: hero-rise 0.45s ease-out 0.5s both; }
 /* the same neon lift as the mark, so the closing lines read as a set */
 .hero__subtitle,
 .hero__start {
@@ -406,8 +416,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-/* starts white; main.js clears the flag when nothing will animate it */
-.js-anim .hero__sweep { background-position: 100% 0; }
+@keyframes hero-fill {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+.hero__sweep { animation: hero-fill 1s ease-in-out 0.15s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__okko,
+  .hero__subtitle,
+  .hero__start,
+  .hero__sweep { animation: none; }
+}
 
 /* the hover arrows rest at right:-18px plus a 28px offset, which pushed
    the page ~21px wider than the viewport — enough that a horizontal
