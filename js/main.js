@@ -218,6 +218,17 @@ function initScrollAnimations() {
       });
   });
 
+  // the hero ring sweeps in left to right, a beat after the headline
+  document.querySelectorAll('.hero__ring-svg').forEach((svg) => {
+    gsap.to(svg, {
+      clipPath: 'inset(0 0% 0 0)',
+      duration: 2.2,
+      delay: 0.6,
+      ease: 'power1.inOut',
+      scrollTrigger: { trigger: svg, start: 'top 85%' },
+    });
+  });
+
   document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path, .chalk-circle__svg path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;

@@ -172,7 +172,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__title-sub {
   display: block;
   margin-top: 16px;
-  max-width: 24ch;
+  /* narrower than it needs to be: the ring around it is an ellipse, and
+     a wide short block leaves its corners outside the curve */
+  max-width: 19ch;
   font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   font-weight: 500;
   /* extra leading so the drawn-in underline under a wrapped first line
@@ -371,12 +373,38 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 /* only while the page is going to animate them — see the head script */
 .js-anim .chalk-underline { background-size: 0% 8px; }
-/* the hero stroke runs hot pink against the acid headline (the colour is
-   baked into the data URI — a background image cannot read a custom
-   property, so the whole squiggle is repeated with a new stroke) */
-.chalk-underline--pink {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M2,10 C20,4 40,14 60,8 C75,4 90,12 98,9' fill='none' stroke='%23FF3EA5' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+/* the hero phrase is ringed rather than underlined. the ring is a
+   block-level overlay so the phrase can still wrap inside it, and it
+   sweeps in under a clip rather than by unrolling a stroke — a path
+   stretched this far by preserveAspectRatio="none" renders a
+   stroke-dashoffset animation wrong in Chromium. */
+.hero__ring {
+  position: relative;
+  display: inline-block;
+  /* a little of the clearance comes from the box and the rest from the
+     ring hanging outside it, so the ring never leaves the container */
+  padding: 0 16px;
 }
+/* the ring hangs outside the phrase box rather than being padded away
+   from it: padding would indent the phrase from the headline above and
+   force an extra line break */
+.hero__ring-svg {
+  position: absolute;
+  left: -20px;
+  top: -30px;
+  width: calc(100% + 40px);
+  height: calc(100% + 60px);
+  overflow: visible;
+  pointer-events: none;
+}
+.hero__ring-svg path {
+  fill: none;
+  stroke: var(--acid);
+  stroke-width: 3;
+  /* the ring stretches to the phrase, the line weight should not */
+  vector-effect: non-scaling-stroke;
+}
+.js-anim .hero__ring-svg { clip-path: inset(0 100% 0 0); }
 
 /* the hover arrows rest at right:-18px plus a 28px offset, which pushed
    the page ~21px wider than the viewport — enough that a horizontal
@@ -933,8 +961,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .hero__main { margin-top: auto; margin-bottom: auto; padding-top: 6vh; }
   .hero__title { margin-bottom: 0; font-size: 2.05rem; }
   /* let the promise line breathe away from the headline */
-  .hero__title-sub { margin-top: 28px; font-size: 1.1rem; }
-  .hero__okko { height: 52px; margin: 16px auto 24px; }
+  /* the ring hangs 30px past the phrase top and bottom — both
+     neighbours need to stay clear of it */
+  .hero__title-sub { margin-top: 40px; font-size: 1.1rem; }
+  .hero__okko { height: 52px; margin: 44px auto 24px; }
   /* group the promise + date with the button rather than with the mark */
   .hero__subtitle { margin-top: 88px; }
   .hero__start { margin-bottom: 0; }
