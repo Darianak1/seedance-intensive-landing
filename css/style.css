@@ -961,3 +961,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .hero__title { font-size: 1.8rem; }
   .hero__title-sub { font-size: 1.02rem; }
 }
+
+/* .meta upper-cases its line, which would spell the brand CREAITE */
+.brand-name { text-transform: none; }
