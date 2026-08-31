@@ -207,7 +207,10 @@ function initScrollAnimations() {
       { backgroundSize: '0% 8px' },
       {
         backgroundSize: '100% 8px',
-        duration: 1.1,
+        // the hero underline draws in slower and a beat after the
+        // headline lands, so it reads as a deliberate stroke
+        duration: Number(el.dataset.drawDuration) || 1.1,
+        delay: Number(el.dataset.drawDelay) || 0,
         ease: 'power1.inOut',
         scrollTrigger: { trigger: el, start: 'top 85%' },
       });

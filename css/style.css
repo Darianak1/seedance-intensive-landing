@@ -175,7 +175,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   max-width: 24ch;
   font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   font-weight: 500;
-  line-height: 1.25;
+  /* extra leading so the drawn-in underline under a wrapped first line
+     clears the second line's text */
+  line-height: 1.75;
   opacity: 0.85;
 }
 .hero__title-accent { color: var(--acid); }
