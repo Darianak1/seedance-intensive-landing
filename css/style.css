@@ -187,10 +187,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__title-accent { color: var(--acid); }
 .hero__okko {
   display: block;
-  height: clamp(46px, 7vw, 88px);
+  height: clamp(56px, 8.4vw, 104px);
   width: auto;
   margin: 22px auto 34px;
+  /* the mark is the partner's own artwork, so it keeps its white: it is
+     lifted off the video by a neon halo rather than being recoloured */
+  filter: drop-shadow(0 0 18px rgba(255, 110, 199, 0.55))
+          drop-shadow(0 0 42px rgba(255, 110, 199, 0.3));
 }
+/* lands after the phrase above has finished filling in */
+.js-anim .hero__okko { opacity: 0; transform: scale(0.94); }
 /* was body text at 90% opacity and disappeared under the headline —
    the display face at full strength makes it read as a promise */
 .hero__subtitle {
@@ -950,7 +956,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .hero__title { margin-bottom: 0; font-size: 2.05rem; }
   /* let the promise line breathe away from the headline */
   .hero__title-sub { margin-top: 40px; font-size: 1.1rem; }
-  .hero__okko { height: 52px; margin: 44px auto 24px; }
+  .hero__okko { height: 62px; margin: 44px auto 24px; }
   /* group the promise + date with the button rather than with the mark */
   .hero__subtitle { margin-top: 88px; }
   .hero__start { margin-bottom: 0; }

@@ -229,6 +229,17 @@ function initScrollAnimations() {
     });
   });
 
+  document.querySelectorAll('.hero__okko').forEach((el) => {
+    gsap.to(el, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.9,
+      delay: 2.6,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' },
+    });
+  });
+
   document.querySelectorAll('.inside__arrow path, .inside__fork path, .inside__link-arrow path, .program__lead-arrow path, .chalk-circle__svg path').forEach((path) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
