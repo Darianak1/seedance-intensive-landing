@@ -218,14 +218,14 @@ function initScrollAnimations() {
       });
   });
 
-  // the hero ring sweeps in left to right, a beat after the headline
-  document.querySelectorAll('.hero__ring-svg').forEach((svg) => {
-    gsap.to(svg, {
-      clipPath: 'inset(0 0% 0 0)',
+  // the hero phrase turns acid left to right, a beat after the headline
+  document.querySelectorAll('.hero__sweep').forEach((el) => {
+    gsap.to(el, {
+      backgroundPosition: '0% 0',
       duration: 2.2,
       delay: 0.6,
       ease: 'power1.inOut',
-      scrollTrigger: { trigger: svg, start: 'top 85%' },
+      scrollTrigger: { trigger: el, start: 'top 85%' },
     });
   });
 
