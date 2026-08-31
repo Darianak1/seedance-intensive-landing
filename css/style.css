@@ -922,6 +922,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   .hero__content { padding-top: 16px; padding-bottom: 56px; gap: 0; }
   .hero__main { margin-top: auto; margin-bottom: auto; padding-top: 6vh; }
   .hero__title { margin-bottom: 0; }
+  /* let the promise line breathe away from the headline */
+  .hero__title-sub { margin-top: 28px; }
   .hero__okko { height: 52px; margin: 16px auto 24px; }
   .hero__subtitle { margin-top: 26px; }
 }
