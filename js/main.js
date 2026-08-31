@@ -175,7 +175,7 @@ function initScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   document.querySelectorAll('section').forEach((section) => {
-    const targets = section.querySelectorAll('.card, .section-title, .hero__title, .hero__subtitle, .hero__cta');
+    const targets = section.querySelectorAll('.card, .section-title, .hero__title, .hero__cta');
     if (!targets.length) return;
     gsap.from(targets, {
       opacity: 0,
@@ -229,14 +229,18 @@ function initScrollAnimations() {
     });
   });
 
-  document.querySelectorAll('.hero__okko').forEach((el) => {
-    gsap.to(el, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.9,
-      delay: 1.6,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 85%' },
+  // the mark, then the promise and the date: each lands on the beat
+  // after the one above it finishes
+  [['.hero__okko', 1.6], ['.hero__subtitle', 2.1], ['.hero__start', 2.35]].forEach(([selector, delay]) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.9,
+        delay,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+      });
     });
   });
 
