@@ -321,8 +321,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.inside__fork--split { display: none; width: min(400px, 90%); }
 .inside__fork--single { width: 64px; }
+/* карточка со счётчиком осталась одна: во всю ширину она разъезжается,
+   поэтому держим её в разумных рамках по центру */
+.inside__stat { max-width: 460px; margin: 0 auto; }
+/* ролики студии переехали сюда из отдельной секции и им нужен воздух */
+.inside .gallery__cases-label { display: inline-block; margin: 48px 0 16px; }
 
 .inside__outcome { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center; }
 .inside__stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -352,8 +356,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__cta { margin-top: 44px; }
 
 @media (min-width: 768px) {
-  .inside__fork--split { display: block; }
-  .inside__fork--single { display: none; }
   .inside__outcome { grid-template-columns: 1fr auto 1fr; gap: 20px; }
   .inside__link-arrow { width: 110px; transform: none; margin: 0; }
 }
