@@ -342,6 +342,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__brand-logo--avito { max-height: 26px; }
 .inside__brand-logo--cherna { max-height: 36px; }
 .inside__brand-logo--yandex { max-height: 30px; }
+/* новые переехали из блока «Наши клиенты»: высоты пересчитаны в той же
+   пропорции, иначе они забивают собой первую четвёрку */
+.inside__brand-logo--lada { max-height: 27px; }
+.inside__brand-logo--juster { max-height: 18px; }
+.inside__brand-logo--x5 { max-height: 23px; }
+.inside__brand-logo--monarch { max-height: 31px; }
 .inside__brands-more { margin-top: 14px; font-size: 1.25rem; transform: rotate(-1deg); }
 .inside__cta { margin-top: 44px; }
 
