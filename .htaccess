@@ -1,0 +1,36 @@
+# Всё на https: без этого сайт открывается по двум адресам сразу —
+# посетитель может попасть на незащищённую версию, а поисковики
+# считают http и https разными сайтами и делят между ними вес.
+# Вторая проверка — для случая, когда сервер стоит за прокси и
+# сам про шифрование не знает: без неё получилась бы петля редиректов.
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Браузер держит у себя картинки, видео, шрифты и стили, вместо того
+# чтобы качать их заново на каждой странице. Повторный заход и переходы
+# по разделам становятся мгновенными, а трафик хостинга экономится.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  # разметку и код держим короче: чтобы правки на сайте
+  # доходили до людей, а не упирались в старый кэш
+  ExpiresByType text/css "access plus 1 hour"
+  ExpiresByType application/javascript "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Текстовые файлы едут по сети сжатыми — это самая дешёвая экономия,
+# какая бывает. Видео и картинки не трогаем, они уже сжаты.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
