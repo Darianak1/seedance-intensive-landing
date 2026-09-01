@@ -102,12 +102,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 /* кнопка залита салатовым целиком, поэтому светится не текст, а сама
    плашка — свечение снаружи, тенью блока */
 .btn-cta {
-  box-shadow: 0 0 18px rgba(215, 255, 40, 0.45),
-              0 0 48px rgba(215, 255, 40, 0.22);
+  box-shadow: 0 0 18px rgba(255, 110, 199, 0.5),
+              0 0 48px rgba(255, 110, 199, 0.26);
 }
 .btn-cta:hover {
-  box-shadow: 0 0 24px rgba(215, 255, 40, 0.6),
-              0 0 64px rgba(215, 255, 40, 0.3);
+  box-shadow: 0 0 26px rgba(255, 110, 199, 0.65),
+              0 0 64px rgba(255, 110, 199, 0.34);
 }
 
 .btn--lg { padding: 20px 44px; font-size: clamp(1rem, 1.6vw, 1.2rem); }
