@@ -352,7 +352,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__brand-logo--juster { max-height: 18px; }
 .inside__brand-logo--x5 { max-height: 23px; }
 .inside__brand-logo--monarch { max-height: 31px; }
-.inside__brands-more { margin-top: 14px; font-size: 1.25rem; transform: rotate(-1deg); }
+/* подпись-хвостик под роликами. .chalk-note — инлайн-блок, и без
+   собственной строки хвостик вставал бок о бок с кнопкой ниже */
+.inside__brands-more { display: block; margin-top: 24px; font-size: 1.25rem; transform: rotate(-1deg); }
 .inside__cta { margin-top: 44px; }
 
 @media (min-width: 768px) {
