@@ -73,9 +73,12 @@
         <path class="inside__arrow-head" d="M66,46 L83,64 L97,44" />
       </svg>
       <div class="inside__video-wrap">
-        <div class="inside__placeholder">
-          <p class="chalk-note">видео скоро появится</p>
-        </div>
+        <!-- ролик на 3,5 минуты со звуком: играет по кнопке, а не сам.
+             preload="none" — файл не качается, пока его не запросили -->
+        <video class="inside__video" controls playsinline preload="none"
+               poster="assets/img/inside-poster.jpg">
+          <source src="assets/video/inside.mp4" type="video/mp4">
+        </video>
       </div>
       <p class="inside__hire">Лучших забираем на работу в нейропродакшн <strong>FilmWay AI</strong></p>
 
