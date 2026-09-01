@@ -175,7 +175,12 @@ function initScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   document.querySelectorAll('section').forEach((section) => {
-    const targets = section.querySelectorAll('.card, .section-title, .hero__title, .hero__cta');
+    // the hero animates on CSS keyframes instead: it is on screen from
+    // the first frame, and while the page was still settling into place
+    // ScrollTrigger re-applied its start values and left the button
+    // stranded 40px down its own gap
+    if (section.id === 'hero') return;
+    const targets = section.querySelectorAll('.card, .section-title');
     if (!targets.length) return;
     gsap.from(targets, {
       opacity: 0,

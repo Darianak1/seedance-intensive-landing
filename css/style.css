@@ -206,9 +206,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 /* the clock only starts at the first paint, and the web fonts hold that
    up — so these delays are deliberately short: whatever they are, the
    wait the visitor actually feels is first-paint plus this. */
+.hero__title { animation: hero-rise 0.75s ease-out both; }
 .hero__okko { animation: hero-rise 0.75s ease-out 0.5s both; }
 .hero__subtitle { animation: hero-rise 0.75s ease-out 0.7s both; }
 .hero__start { animation: hero-rise 0.75s ease-out 0.9s both; }
+.hero__cta { animation: hero-rise 0.75s ease-out 1.05s both; }
 /* the same neon lift as the mark, so the closing lines read as a set */
 .hero__subtitle,
 .hero__start {
@@ -423,9 +425,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .hero__sweep { animation: hero-fill 1.6s ease-in-out 0.25s both; }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero__title,
   .hero__okko,
   .hero__subtitle,
   .hero__start,
+  .hero__cta,
   .hero__sweep { animation: none; }
 }
 
@@ -987,9 +991,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   /* let the promise line breathe away from the headline */
   .hero__title-sub { margin-top: 40px; font-size: 1.1rem; }
   .hero__okko { height: 62px; margin: 44px auto 24px; }
-  /* group the promise + date with the button rather than with the mark */
-  .hero__subtitle { margin-top: 88px; }
-  .hero__start { margin-bottom: 0; }
+  /* the closing block reads as one centred stack with even spacing:
+     promise, date, button — 20px between each */
+  .hero__subtitle { margin-top: 72px; margin-bottom: 20px; text-align: center; }
+  .hero__start { margin-bottom: 20px; }
   .hero__cta { margin-top: 0; }
 }
 
