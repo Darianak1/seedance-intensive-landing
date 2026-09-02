@@ -422,8 +422,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .jury__card { display: flex; gap: 18px; align-items: flex-start; min-width: 0; }
 .jury__card + .jury__card { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--border); }
 .jury__photo {
-  width: 88px;
-  height: 88px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 18%;
@@ -458,7 +458,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 @media (max-width: 640px) {
   .jury__card { flex-direction: column; gap: 14px; align-items: stretch; }
   .jury__info { width: 100%; }
-  .jury__photo { width: 72px; height: 72px; }
+  .jury__photo { width: 56px; height: 56px; }
   .jury__films img { width: 92px; }
 }
 
