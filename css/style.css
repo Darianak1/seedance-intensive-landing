@@ -95,13 +95,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 /* у брендов и фильмов в биографиях подсвечиваем сами названия,
    а не весь абзац вокруг них */
 .student-chip__role.is-neon strong {
-  /* буквы светлее самого акцента, плюс плотное салатовое ядро вплотную
-     к контуру — оно и даёт ощущение яркости. Розовый ореол снаружи. */
-  color: #EAFF7A;
-  text-shadow: 0 0 3px rgba(234, 255, 122, 0.95),
-               0 0 8px rgba(215, 255, 40, 0.75),
-               0 0 20px rgba(255, 110, 199, 0.7),
-               0 0 46px rgba(255, 110, 199, 0.4);
+  /* тот же салатовый, что у кнопок, в полную силу — плюс розовый ореол */
+  color: var(--acid);
+  text-shadow: 0 0 8px rgba(255, 110, 199, 0.8),
+               0 0 22px rgba(255, 110, 199, 0.55),
+               0 0 48px rgba(255, 110, 199, 0.3);
 }
 /* кнопка залита салатовым целиком, поэтому светится не текст, а сама
    плашка — свечение снаружи, тенью блока */
@@ -621,8 +619,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .student-chip__photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--border-acid); }
 .student-chip__info { min-width: 0; }
 .student-chip__name { display: block; font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; margin-bottom: 6px; }
-.student-chip__role { display: block; font-size: 0.8rem; opacity: 0.65; line-height: 1.4; }
-.student-chip__role strong { color: var(--acid); font-weight: 800; opacity: 1; }
+/* приглушаем цветом, а не прозрачностью: opacity на абзаце гасила и
+   выделенные названия внутри, и никакой opacity:1 у них это не отменял */
+.student-chip__role { display: block; font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
+.student-chip__role strong { color: var(--acid); font-weight: 800; }
 .student-chip__photo--placeholder { background: var(--card-bg); }
 
 
