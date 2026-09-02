@@ -962,6 +962,20 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   align-items: center;
   justify-content: center;
 }
+/* текстовый отзыв в карусели из скриншотов: та же карточка, но набор
+   вместо картинки — поэтому и выравнивание по верху, а не по центру */
+/* картинки живут в фиксированной высоте, а текст режется — поэтому
+   текстовая карточка растёт по содержимому, но не ниже соседей */
+.testimonials-carousel__slide--text { align-items: flex-start; height: auto; min-height: 320px; }
+.tcard { margin: 0; padding: 24px 26px; font-size: 0.92rem; line-height: 1.45; }
+.tcard p + p { margin-top: 12px; }
+.tcard__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--acid);
+  margin-bottom: 14px;
+}
 .testimonials-carousel__slide img {
   width: auto;
   height: 100%;
@@ -992,6 +1006,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   /* the slide is capped by width here, so a tall box just letterboxes
      the wider screenshots */
   .testimonials-carousel__slide { height: 200px; }
+  .testimonials-carousel__slide--text { height: auto; min-height: 200px; }
+  .tcard { padding: 20px 22px; font-size: 0.86rem; }
 }
 
 .faq { padding: 80px 0; }
