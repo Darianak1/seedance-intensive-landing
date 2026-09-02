@@ -1009,7 +1009,21 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   padding-right: 40px;
 }
 .faq-item__content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.faq-item[data-open="true"] .faq-item__content { max-height: 400px; padding-top: 12px; padding-bottom: 10px; }
+/* ответ вырос до списка из четырёх пунктов — 400px его обрезали */
+.faq-item[data-open="true"] .faq-item__content { max-height: 700px; padding-top: 12px; padding-bottom: 10px; }
+.faq-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.faq-list li { position: relative; padding-left: 22px; }
+.faq-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--acid);
+}
+.faq-list strong { color: var(--acid); font-weight: 700; }
 .faq-item__arrow {
   position: absolute;
   top: -18px;
