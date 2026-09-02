@@ -419,10 +419,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
    сетки, и текст рядом уезжает за край экрана */
 .jury { grid-column: 1 / -1; margin-top: 22px; min-width: 0; }
 .jury__label { display: inline-block; margin-bottom: 14px; font-size: 1.5rem; }
-.jury__card { display: flex; gap: 20px; align-items: flex-start; min-width: 0; }
+.jury__card { display: flex; gap: 18px; align-items: flex-start; min-width: 0; }
+.jury__card + .jury__card { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--border); }
 .jury__photo {
-  width: 120px;
-  height: 120px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 18%;
@@ -457,7 +458,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 @media (max-width: 640px) {
   .jury__card { flex-direction: column; gap: 14px; align-items: stretch; }
   .jury__info { width: 100%; }
-  .jury__photo { width: 96px; height: 96px; }
+  .jury__photo { width: 72px; height: 72px; }
   .jury__films img { width: 92px; }
 }
 
