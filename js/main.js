@@ -237,8 +237,44 @@ function initScrollAnimations() {
 
 }
 
+
+// Ролик на втором экране: сам запускается, когда доезжает до экрана, и
+// сам встаёт на паузу, когда уезжает. Автозапуск разрешён только без
+// звука, поэтому рядом живёт кнопка, которая его включает.
+function initInsideVideo() {
+  const video = document.querySelector('.js-inside-video');
+  const unmute = document.querySelector('.js-unmute');
+  if (!video) return;
+
+  if (unmute) {
+    unmute.addEventListener('click', () => {
+      video.muted = false;
+      video.volume = 1;
+      if (video.paused) video.play().catch(() => {});
+      unmute.hidden = true;
+    });
+    // нативные кнопки плеера тоже снимают немоту — прячем свою следом
+    video.addEventListener('volumechange', () => {
+      if (!video.muted) unmute.hidden = true;
+    });
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else if (!video.paused) {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+  seen.observe(video);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
+  initInsideVideo();
   document.querySelectorAll('.js-shader-canvas').forEach((canvas) => {
     initShaderBackground(canvas);
   });
