@@ -413,6 +413,54 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 .advantages__cta { display: block; width: fit-content; margin: 40px auto 0; }
 
+/* карточка члена жюри внутри пункта про фидбэк: портрет слева,
+   регалии справа, под ними лента постеров */
+/* min-width:0 обязателен: без него лента постеров растягивает колонку
+   сетки, и текст рядом уезжает за край экрана */
+.jury { grid-column: 1 / -1; margin-top: 22px; min-width: 0; }
+.jury__label { display: inline-block; margin-bottom: 14px; font-size: 1.5rem; }
+.jury__card { display: flex; gap: 20px; align-items: flex-start; min-width: 0; }
+.jury__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 2px solid var(--acid);
+  flex-shrink: 0;
+}
+/* в колоночном флексе элемент тянется по содержимому, а содержимое —
+   лента из шести постеров. Без max-width он растягивал всю страницу */
+.jury__info { min-width: 0; max-width: 100%; }
+.jury__name { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
+.jury__role { font-size: 0.9rem; line-height: 1.45; margin-top: 8px; color: rgba(255,255,255,0.75); }
+.jury__role strong { color: var(--acid); font-weight: 700; }
+/* постеры уезжают вбок, а не сжимаются: шесть штук в узкой колонке
+   иначе превращаются в марки */
+.jury__films {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--acid) transparent;
+}
+.jury__films img {
+  width: 108px;
+  height: auto;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--border-acid);
+  display: block;
+}
+@media (max-width: 640px) {
+  .jury__card { flex-direction: column; gap: 14px; align-items: stretch; }
+  .jury__info { width: 100%; }
+  .jury__photo { width: 96px; height: 96px; }
+  .jury__films img { width: 92px; }
+}
+
 /* plain brand line: no rings, so it does not need the airy leading */
 .advantages__note--brands { line-height: 1.35; }
 .advantages__note-tail { opacity: 0.7; }
