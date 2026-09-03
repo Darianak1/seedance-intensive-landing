@@ -299,7 +299,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__player { position: absolute; inset: 0; }
 .inside__player.is-floating {
   position: fixed;
-  inset: auto 18px 18px auto;
+  /* под липкой шапкой (93px), чтобы не перекрывать кнопку предзаписи */
+  inset: 107px 18px auto auto;
   width: min(340px, 46vw);
   aspect-ratio: 16 / 9;
   z-index: 60;
@@ -326,7 +327,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 }
 .inside__float-close {
   position: absolute;
-  top: 6px;
+  bottom: 6px;
   left: 6px;
   z-index: 3;
   width: 28px;
