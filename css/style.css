@@ -299,8 +299,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .inside__player { position: absolute; inset: 0; }
 .inside__player.is-floating {
   position: fixed;
-  /* под липкой шапкой (93px), чтобы не перекрывать кнопку предзаписи */
-  inset: 107px 18px auto auto;
+  /* вплотную под липкой шапкой: её высота ровно 93px */
+  inset: 95px 18px auto auto;
   width: min(420px, 46vw);
   aspect-ratio: 16 / 9;
   z-index: 60;
@@ -356,7 +356,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
    почти во всю ширину, поля по 18px с обеих сторон */
 @media (max-width: 640px) {
   .inside__player.is-floating {
-    inset: 107px 18px auto 18px;
+    inset: 95px 18px auto 18px;
     width: auto;
   }
   .inside__player.is-floating .inside__unmute { font-size: 0.72rem; padding: 7px 14px; }
