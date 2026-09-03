@@ -25,7 +25,7 @@
      stack and swaps when the faces land. -->
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@700;800&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/style.css?v=25">
+<link rel="stylesheet" href="css/style.css?v=26">
 </head>
 <body>
 <header class="site-header" id="site-header">
@@ -76,11 +76,14 @@
         <!-- запускается сам, когда доезжает до экрана, и только без звука:
              со звуком браузеры автозапуск запрещают. preload="none" —
              файл не качается, пока блок не показался -->
-        <video class="inside__video js-inside-video" muted playsinline controls
-               preload="none" poster="assets/img/inside-poster.jpg">
-          <source src="assets/video/inside.mp4" type="video/mp4">
-        </video>
-        <button class="inside__unmute js-unmute" type="button">Включить звук</button>
+        <div class="inside__player js-player">
+          <video class="inside__video js-inside-video" muted playsinline controls
+                 preload="none" poster="assets/img/inside-poster.jpg">
+            <source src="assets/video/inside.mp4" type="video/mp4">
+          </video>
+          <button class="inside__unmute js-unmute" type="button">Включить звук</button>
+          <button class="inside__float-close js-float-close" type="button" aria-label="Закрыть плеер">✕</button>
+        </div>
       </div>
       <p class="inside__hire">Лучших забираем на работу в нейропродакшн <strong>FilmWay AI</strong></p>
 
@@ -742,6 +745,6 @@
 <script src="assets/js/ScrollTrigger.min.js"></script>
 <script src="js/countdown.js?v=2"></script>
 <script src="js/shader-bg.js?v=2"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

@@ -260,16 +260,41 @@ function initInsideVideo() {
   }
 
   if (!('IntersectionObserver' in window)) return;
+
+  const player = document.querySelector('.js-player');
+  const wrap = video.closest('.inside__video-wrap');
+  const close = document.querySelector('.js-float-close');
+  let dismissed = false;
+
+  const float = (on) => {
+    if (!player || !wrap) return;
+    player.classList.toggle('is-floating', on);
+    wrap.classList.toggle('is-empty', on);
+  };
+
+  if (close) {
+    close.addEventListener('click', () => {
+      // закрыли уголок — останавливаем и больше не всплываем,
+      // пока блок снова не появится на экране
+      video.pause();
+      float(false);
+      dismissed = true;
+    });
+  }
+
   const seen = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        dismissed = false;
+        float(false);
         video.play().catch(() => {});
-      } else if (!video.paused) {
-        video.pause();
+      } else if (!video.paused && !dismissed) {
+        // уехал с экрана, но играет — перекладываем в угол, а не тушим
+        float(true);
       }
     });
   }, { threshold: 0.5 });
-  seen.observe(video);
+  seen.observe(wrap || video);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
