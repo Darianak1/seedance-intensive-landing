@@ -301,7 +301,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   position: fixed;
   /* под липкой шапкой (93px), чтобы не перекрывать кнопку предзаписи */
   inset: 107px 18px auto auto;
-  width: min(340px, 46vw);
+  width: min(420px, 46vw);
   aspect-ratio: 16 / 9;
   z-index: 60;
   border-radius: 12px;
@@ -350,6 +350,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
   padding: 5px 11px;
   font-size: 0.62rem;
   box-shadow: 0 0 10px rgba(255, 110, 199, 0.5);
+}
+
+/* на телефоне уголок в 46vw выходил размером с марку — растягиваем
+   почти во всю ширину, поля по 18px с обеих сторон */
+@media (max-width: 640px) {
+  .inside__player.is-floating {
+    inset: 107px 18px auto 18px;
+    width: auto;
+  }
+  .inside__player.is-floating .inside__unmute { font-size: 0.72rem; padding: 7px 14px; }
+  .inside__player.is-floating .inside__float-close { width: 32px; height: 32px; }
 }
 /* кнопка звука поверх ролика: видео стартует беззвучным, и без такой
    подсказки человек просто не поймёт, что звук есть */
