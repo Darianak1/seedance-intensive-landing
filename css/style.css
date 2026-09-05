@@ -137,6 +137,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.
 .site-footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .site-footer__socials { display: flex; gap: 16px; }
 .site-footer__socials a { color: var(--white); opacity: 0.7; text-decoration: none; }
+/* документы и реквизиты — отдельными строками во всю ширину подвала,
+   иначе они втискиваются в один ряд с логотипом и соцсетями */
+.site-footer__docs { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.site-footer__docs a { font-size: 0.85rem; color: var(--white); opacity: 0.7; text-decoration: underline; text-underline-offset: 3px; }
+.site-footer__docs a:hover { opacity: 1; color: var(--acid); }
+.site-footer__legal { flex-basis: 100%; font-size: 0.78rem; line-height: 1.5; color: rgba(255,255,255,0.45); }
 
 @media (max-width: 768px) {
   .site-header__nav { display: none; }
