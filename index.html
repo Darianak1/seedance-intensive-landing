@@ -6,7 +6,14 @@
      already drawn while the page (and GSAP, from a CDN) is still loading.
      main.js removes it again if animation is skipped, so the strokes
      still show when GSAP never arrives. -->
-<script>document.documentElement.className += ' js-anim';</script>
+<script>
+  document.documentElement.className += ' js-anim';
+  // вариант с ценой живёт по адресу /price — это тот же файл,
+  // .htaccess отдаёт его без редиректа, поэтому в адресе остаётся /price
+  if (location.pathname.replace(/\/+$/, '') === '/price') {
+    document.documentElement.className += ' with-price';
+  }
+</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Интенсив по Seedance 2.5 — creAIte</title>
@@ -27,7 +34,7 @@
      stack and swaps when the faces land. -->
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@700;800&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/style.css?v=31">
+<link rel="stylesheet" href="css/style.css?v=32">
 </head>
 <body>
 <header class="site-header" id="site-header">
@@ -629,6 +636,15 @@
           </div>
         </figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="price" id="price">
+    <div class="container price__inner">
+      <p class="chalk-note price__label">Стоимость</p>
+      <p class="price__value">28 000 <span class="price__cur">₽</span></p>
+      <p class="price__note">За 7 дней интенсива на реальном проекте для Okko</p>
+      <a href="https://t.me/creAite_school_bot?start=c1788255974978-ds" class="btn btn-cta btn--lg price__cta" target="_blank" rel="noopener">Записаться на интенсив</a>
     </div>
   </section>
 
